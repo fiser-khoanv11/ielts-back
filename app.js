@@ -9,6 +9,21 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+// Dunno
+const forceSSL = function() {
+  return function (req, res, next) {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+      return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    next();
+  }
+}
+app.use(forceSSL());
+app.use(express.static(__dirname + '/dist'));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
+
 // Mongoose
 var url = 'mongodb://khoa.uet58:ariana1995@ds147599.mlab.com:47599/m-proj';
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
@@ -37,7 +52,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/', index);
+app.use('/index', index); // Sua cai nay
 app.use('/users', users);
 
 // catch 404 and forward to error handler
