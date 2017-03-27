@@ -57,16 +57,16 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ 516:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(843);
+var content = __webpack_require__(846);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(954)(content, {});
+var update = __webpack_require__(959)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -84,7 +84,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 842:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -99,12 +99,12 @@ exports.push([module.i, ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0
 
 /***/ }),
 
-/***/ 843:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
 // imports
-exports.i(__webpack_require__(842), "");
+exports.i(__webpack_require__(845), "");
 
 // module
 exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n  /*font-family: 'Roboto';*/\n  margin: 0px;\n}\n\n.padding-50 {\n  padding: 50px;\n}\n\n.padding-20 {\n  padding: 20px;\n}\n\n.margin-bottom-50 {\n  margin-bottom: 50px;\n}\n\n.margin-right-10 {\n  margin-right: 10px;\n}\n\np {\n  text-align: justify;\n}\n\ninput, .md-select-value {\n  color: rgb(103, 58, 183) !important;\n}\n\n.inline-flex {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n}\n\nb, .primary-color {\n  color: #3F51B5 !important;\n}\n\n.space-20 {\n  height: 20px;\n}\n\n.italic {\n  font-style: italic;\n}\n\n.mat-toolbar-layout, .mat-toolbar-row {\n  height: 100% !important;\n  min-height: 0px !important;\n}\n", ""]);
@@ -114,7 +114,7 @@ exports.push([module.i, "/* You can add global styles to this file, and also imp
 
 /***/ }),
 
-/***/ 954:
+/***/ 959:
 /***/ (function(module, exports) {
 
 /*
@@ -367,13 +367,13 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 957:
+/***/ 962:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(516);
+module.exports = __webpack_require__(518);
 
 
 /***/ })
 
-},[957]);
+},[962]);
 //# sourceMappingURL=styles.bundle.js.map

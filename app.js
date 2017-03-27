@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/user');
+var test = require('./routes/test');
+var skill = require('./routes/skill');
 
 // Mongoose
 var url = 'mongodb://khoa.uet58:ariana1995@ds147599.mlab.com:47599/m-proj';
@@ -38,8 +40,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/index', index); // Sua cai nay
-app.use('/users', users);
+// app.use('*', function (req, res, next) {
+//   res.sendFile(path.resolve('dist/index.html'));
+// });
+
+app.use('/api/index', index); // Sua cai nay
+app.use('/api/user', user);
+app.use('/api/test', test);
+app.use('/api/skill', skill);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,20 +66,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// Dunno
-// const forceSSL = function() {
-//   return function (req, res, next) {
-//     if (req.headers['x-forwarded-proto'] !== 'https') {
-//       return res.redirect(['https://', req.get('Host'), req.url].join(''));
-//     }
-//     next();
-//   }
-// }
-// app.use(forceSSL());
-// app.use(express.static(__dirname + '/dist'));
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/dist/index.html'));
-// });
 
 module.exports = app;
