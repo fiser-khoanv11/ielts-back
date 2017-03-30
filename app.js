@@ -40,7 +40,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.use('*', function (req, res, next) {
+// app.get('*', function (req, res, next) {
 //   res.sendFile(path.resolve('dist/index.html'));
 // });
 
