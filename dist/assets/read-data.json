@@ -299,6 +299,10 @@
                     "last": 5,
                     "type": "true-false",
                     "options": "tf",
+                    "directions": [
+                      "Do the following statements agree with the information given in Reading Passage 1?",
+                      "In boxes 1-5 on your answer sheet, write"
+                    ],
                     "text": [
                         "Examples of ancient stepwells can be found all over the world.",
                         "Stepwells had a range of functions, in addition to those related to water collection.",
@@ -311,8 +315,11 @@
                     "first": 6,
                     "last": 8,
                     "type": "answer",
-                    "word_limit": 1,
-                    "number_limit": 0,
+                    "directions": [
+                      "Answer the questions below.",
+                      "Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
+                      "Write your answers in boxes 6-8 on your answer sheet."
+                    ],
                     "text": [
                         "Which part of some stepwells provided shade for people?",
                         "What type of serious climatic event, which took place in southern Rajasthan, is mentioned in the article?",
@@ -470,6 +477,11 @@
                     "first": 14,
                     "last": 21,
                     "type": "heading",
+                    "directions": [
+                      "Reading Passage 2 has nine paragraph, <b>A-I</b>.",
+                      "Choose the correct heading for paragraphs <b>A-E</b> and <b>G-I</b> from the list of headings below.",
+                      "Write the correct number, <b>i-xi</b>, in boxes 14-21 on your answer sheet."
+                    ],
                     "headings": [
                         "A fresh and important long-term goal",
                         "Changing for roads and improving other transport methods",
@@ -519,6 +531,10 @@
                     "last": 26,
                     "type": "true-false",
                     "options": "tf",
+                    "directions": [
+                        "Do the following statements agree with the information given in Reading Passage 1?",
+                        "In boxes 22-26 on your answer sheet, write"
+                      ],
                     "text": [
                         "The need for transport is growing, despite technological developments.",
                         "To reduce production costs, some indsutries have been moved closer to their relevant consumers.",
@@ -537,7 +553,37 @@
                 "sub_heading": "Why are so few companies truly innnovative?",
                 "paras": [
                     {
-                        "content": "Innovation is key to business survival, and companies pu substa..."
+                        "content": "Innovation is key to business survival，and companies put substantial resources into inspiring employees to develop new ideas. There are, nevertheless, people working in luxurious, state-of-the-art centres designed to stimulate innovation who find that their environment doesn’t make them feel at all creative. And there are those who don’t have a budget, or much space, but who innovate successfully."
+                    },
+                    {
+                        "content": "For Robert B. Cialdini, Professor of Psychology at Arizona State University, one reason that companies don’t succeed as often as they should is that innovation starts with recruitment. Research shows that the fit between an employee’s values and a company’s values makes a difference to what contribution they make and whether, two years after they join, they’re still at the company. Studies at Harvard Business School show that, although some individuals may be more creative than others, almost every individual can be creative in the right circumstances."
+                    },
+                    {
+                        "content": "One of the most famous photographs in the story of rock’n’roll emphasises Ciaidini’s views. The 1956 picture of singers Elvis Presley, Carl Perkins, Johnny Cash and Jerry Lee Lewis jamming at a piano in Sun Studios in Memphis tells a hidden story. Sun’s ‘million-dollar quartet’ could have been a quintet. Missing from the picture is Roy Orbison’ a greater natural singer than Lewis, Perkins or Cash. Sam Phillips, who owned Sun, wanted to revolutionise popular music with songs that fused black and white music, and country and blues. Presley, Cash, Perkins and Lewis instinctively understood Phillips’s ambition and believed in it. Orbison wasn’t inspired by the goal, and only ever achieved one hit with the Sun label."
+                    },
+                    {
+                        "content": "The value fit matters, says Cialdini, because innovation is, in part, a process of change, and under that pressure we, as a species, behave differently, ‘When things change, we are hard-wired to play it safe.’ Managers should therefore adopt an approach that appears counterintuitive -they should explain what stands to be lost if the company fails to seize a particular opportunity. Studies show that we invariably take more gambles when threatened with a loss than when offered a reward."
+                    },
+                    {
+                        "content": "Managing innovation is a delicate art. It’s easy for a company to be pulled in conflicting directions as the marketing, product development, and finance departments each get different feedback from different sets of people. And without a system which ensures collaborative exchanges within the company, it’s also easy for small ‘pockets of innovation‟ to disappear. Innovation is a contact sport. You can‟t brief people just by saying, ‘We’re going in this direction and I’m going to take you with me.’"
+                    },
+                    {
+                        "content": "Cialdini believes that this ‘follow-the-leader syndrome, is dangerous, not least because it encourages bosses to go it alone. ‘It’s been scientifically proven that three people will be better than one at solving problems, even if that one person is the smartest person in the field.’ To prove his point, Cialdini cites an interview with molecular biologist James Watson. Watson, together with Francis Crick, discovered the structure of DNA, the genetic information carrier of all living organisms. ‘When asked how they had cracked the code ahead of an array of highly accomplished rival investigators, he said something that stunned me. He said ”he and Crick had succeeded because they were aware that they weren’t the most intelligent of the scientists pursuing the answer. The smartest scientist was called Rosalind Franklin who, Watson said, “was so intelligent she rarely sought advice”.’"
+                    },
+                    {
+                        "content": "Teamwork taps into one of the basic drivers of human behaviour. ‘The principle of social proof is so pervasive that we don’t even recognise it,’ says Cialdini. ‘If your project is being resisted, for example, by a group of veteran employees, ask another old-timer to speak up for it.’ Cialdini is not alone in advocating this strategy. Research shows that peer power, used horizontally not vertically, is much more powerful than any boss’s speech."
+                    },
+                    {
+                        "content": "Writing, visualising and prototyping can stimulate the flow of new ideas. Cialdini cites scores of research papers and historical events that prove that even something as simple as writing deepens every individual’s engagement in the project. It is, he says, the reason why all those competitions on breakfast cereal packets encouraged us to write in saying, in no more than 10 words: ‘I like Kellogg’s Com Flakes because… .’ The very act of writing makes us more likely to believe it."
+                    },
+                    {
+                        "content": "Authority doesn’t have to inhibit innovation but it often does. The wrong kind of leadership will lead to what Cialdini calls ”captainitis, the regrettable tendency of team members to opt out of team responsibilities that are properly their’. He calls it captainitis because, he says, ”crew members of multipilot aircraft exhibit a sometimes deadly passivity when the flight captain makes a clearly wrong-headed decision”. This behaviour is not, he says, unique to air travel, but can happen in any workplace where the leader is overbearing."
+                    },
+                    {
+                        "content": "At the other end of the scale is the 1980s Memphis design collective, a group of young designers for whom ”the only rule was that there were no rule”. This environment encouraged a free interchange of ideas, which led to more creativity with form, function, colour and materials that revolutionised attitudes to furniture design."
+                    },
+                    {
+                        "content": "Many theorists believe the ideal boss should lead from behind, taking pride in collective accomplishment and giving credit where it is due. Cialdini says:”Leaders should encourage everyone to contribute and simultaneously assure all concerned that every recommendation is important to making the right decision and will be given full attention” The frustrating thing about innovation is that there are many approaches, but no magic formula. However, a manager who wants to create a truly innovative culture can make their job a lot easier by recognising these psychological realities."
                     }
                 ]
             },
@@ -590,32 +636,39 @@
                     ]
                 },
                 {
-                    "first": 31,
-                    "last": 35,
-                    "type": "ending",
-                    "duplicatable": false,
-                    "sentences": [
-                        "Employees whose values match those of their employers are more likely to",
-                        "At times of change, people tend to",
-                        "If people are aware of what they might lost, they often will",
-                        "People working under a dominant boss are liable to",
-                        "Employees working in organisations with few rules are more likely to"
-                    ],
-                    "endings": [
-                        "take chances.",
-                        "share their ideas.",
-                        "become competitive.",
-                        "get promotion.",
-                        "avoid risk.",
-                        "ignore their duties",
-                        "remain in their jobs."
-                    ]
+                  "first": 31,
+                  "last": 35,
+                  "type": "ending",
+                  "directions": [
+                    "Complete each sentence with the correct ending, <b>A-G</b>, below.",
+                    "Write the correct letter, <b>A-G</b>, in boxes 31-35 on your answer sheet."
+                  ],
+                  "sentences": [
+                    "Employees whose values match those of their employers are more likely to",
+                    "At times of change, people tend to",
+                    "If people are aware of what they might lost, they often will",
+                    "People working under a dominant boss are liable to",
+                    "Employees working in organisations with few rules are more likely to"
+                  ],
+                  "endings": [
+                    "take chances.",
+                    "share their ideas.",
+                    "become competitive.",
+                    "get promotion.",
+                    "avoid risk.",
+                    "ignore their duties",
+                    "remain in their jobs."
+                  ]
                 },
                 {
                     "first": 36,
                     "last": 40,
                     "type": "true-false",
                     "options": "yn",
+                    "directions": [
+                      "Do the following statements agree with the claims of the writer in Reading Passage 3?",
+                      "In boxes 36-40 on your answer sheet, write"
+                    ],
                     "text": [
                         "The physical surroundings in which a person works play a key role in determining their creativity.",
                         "Most people have the potential to be creative.",

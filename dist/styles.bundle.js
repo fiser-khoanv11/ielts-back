@@ -50,7 +50,7 @@ exports = module.exports = __webpack_require__(9)();
 exports.i(__webpack_require__(836), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n  /*font-family: 'Roboto';*/\n  margin: 0px;\n}\n\n.padding-50 {\n  padding: 50px;\n}\n\n.padding-20 {\n  padding: 20px;\n}\n\n.margin-bottom-50 {\n  margin-bottom: 50px;\n}\n\n.margin-right-10 {\n  margin-right: 10px;\n}\n\np {\n  text-align: justify;\n}\n\ninput, .md-select-value {\n  color: rgb(103, 58, 183) !important;\n}\n\n.inline-flex {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n}\n\nb, .primary-color {\n  color: #3F51B5 !important;\n}\n\n.space-20 {\n  height: 20px;\n}\n\n.italic {\n  font-style: italic;\n}\n\n.mat-toolbar-layout, .mat-toolbar-row {\n  height: 100% !important;\n  min-height: 0px !important;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n  /*font-family: 'Roboto';*/\n  margin: 0px;\n}\n\n.padding-50 {\n  padding: 50px;\n}\n\n.padding-20 {\n  padding: 20px;\n}\n\n.margin-bottom-50 {\n  margin-bottom: 50px;\n}\n\n.margin-right-10 {\n  margin-right: 10px;\n}\n\np {\n  text-align: justify;\n}\n\ninput, .md-select-value {\n  color: rgb(103, 58, 183) !important;\n}\n\n.inline-flex {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n}\n\nb, .primary-color {\n  color: #1E88E5 !important;\n}\n\n.space-20 {\n  height: 20px;\n}\n\n.italic {\n  font-style: italic;\n}\n\n.mat-toolbar-layout, .mat-toolbar-row {\n  height: 100% !important;\n  min-height: 0px !important;\n}\n", ""]);
 
 // exports
 
