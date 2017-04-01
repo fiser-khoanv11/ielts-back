@@ -69,4 +69,41 @@ router.post('/save-attempt', function (req, res) {
   res.send('POST user/save-attempt');  
 });
 
+router.post('/save-attempt-w', function (req, res) {
+  let body = req.body;
+  let h = false;
+
+  user = User.findOne({
+    id: body.userId
+  }, function(err, user) {
+    if (err) res.send(err);
+    if (user) {
+      for (let i = 0; i < user.attempts.length; i++) {
+        let attempt = user.attempts[i]
+
+        if (attempt.skill === 'writing' && attempt.test_id == body.testId) {
+          attempt.task1 = body.task1;
+          attempt.task2 = body.task2;
+          findOneAndUpdate(user);
+          res.send('POST user/save-attempt-w');
+          h = true;
+          break;
+        }
+      }
+
+      if (!h) {
+        let data = {
+          test_id: body.testId,
+          skill: body.skill,
+          task1: body.task1,
+          task2: body.task2
+        }
+        user.attempts.push(data);
+        findOneAndUpdate(user);
+        res.send('POST user/save-attempt-w');
+      }
+    }
+  });
+});
+
 module.exports = router;
