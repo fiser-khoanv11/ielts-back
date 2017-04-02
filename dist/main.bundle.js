@@ -3456,13 +3456,13 @@ var User = (function () {
 }());
 var GlobalService = (function () {
     function GlobalService() {
+        // static url: string = 'http://localhost:3000';
         this.user = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](undefined);
     }
     GlobalService.prototype.setUser = function (_user) {
         this.user.next(_user);
     };
-    // static url: string = '';
-    GlobalService.url = 'http://localhost:3000';
+    GlobalService.url = '';
     GlobalService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
         __metadata('design:paramtypes', [])
