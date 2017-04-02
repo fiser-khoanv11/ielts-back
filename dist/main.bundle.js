@@ -96,8 +96,8 @@ var AccountService = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(96);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GetDataService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -117,10 +117,8 @@ var GetDataService = (function () {
     }
     GetDataService.prototype.findOne = function (testId, skill) {
         var _this = this;
-        return new Promise(function (resolve) {
-            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/skill/find-one/' + skill + '/' + testId).subscribe(function (response) {
-                resolve(response.json());
-            });
+        return new Promise(function (resolve, reject) {
+            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/skill/find-one/' + skill + '/' + testId).subscribe(function (value) { return resolve(value.json()); }, function (error) { return reject(error); });
         });
     };
     GetDataService.prototype.getDataForEachType = function () {
@@ -521,8 +519,8 @@ var GetDataService = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(96);
 /* unused harmony export User */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -569,28 +567,45 @@ var UserService = (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 192:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)();
+// imports
+
+
+// module
+exports.push([module.i, ".left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-block, .right-block {\r\n  height: 600px;\r\n  width: 49%;\r\n  overflow: scroll;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar { \r\n  display: none; \r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.question-block {\r\n  border: 2px solid #1E88E5;\r\n  padding: 5px;\r\n  display: inline-block;\r\n}\r\n\r\n.question-block > p {\r\n  margin: 0px;\r\n  font-size: larger;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_global_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_types_answer_answer_component__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_types_feature_feature_component__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_types_multiple_multiple_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_types_note_note_component__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__common_types_single_single_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__common_types_table_table_component__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__reading_types_ending_ending_component__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__reading_types_heading_heading_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__reading_types_information_information_component__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__reading_types_sentence_sentence_component__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__reading_types_summary_select_summary_select_component__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__reading_types_true_false_true_false_component__ = __webpack_require__(465);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__dialogs_submit_dialog__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_types_answer_answer_component__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_types_feature_feature_component__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_types_multiple_multiple_component__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_types_note_note_component__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_types_single_single_component__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__common_types_table_table_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reading_types_ending_ending_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__reading_types_heading_heading_component__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__reading_types_information_information_component__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__reading_types_sentence_sentence_component__ = __webpack_require__(463);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__reading_types_summary_select_summary_select_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__reading_types_true_false_true_false_component__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dialogs_submit_dialog__ = __webpack_require__(467);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommonComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -618,15 +633,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var CommonComponent = (function () {
-    function CommonComponent(dialog, snackBar, getDataService, route, global) {
+    function CommonComponent(dialog, snackBar, getDataService, route) {
         this.dialog = dialog;
         this.snackBar = snackBar;
         this.getDataService = getDataService;
         this.route = route;
-        this.global = global;
-        this.data = [];
+        this.sections = [];
         this.keys = [];
         this.isSubmited = false;
         this.timer = 3600;
@@ -634,13 +647,12 @@ var CommonComponent = (function () {
     CommonComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.testId = this.route.snapshot.params['testId'];
-        this.getDataService.findOne(this.testId, this.skill).then(function (result) {
-            _this.data = result['sections'];
-            _this.keys = result['keys'];
-            if (_this.keys.length != 40) {
+        this.getDataService.findOne(this.testId, this.skill).then(function (value) {
+            _this.sections = value['sections'];
+            _this.keys = value['keys'];
+            if (_this.keys.length != 40)
                 console.error('keys.length <> 40');
-            }
-        });
+        }, function (reason) { return console.error(reason); });
         this.setTimer();
     };
     CommonComponent.prototype.setTimer = function () {
@@ -699,7 +711,7 @@ var CommonComponent = (function () {
             testId: this.testId
         };
         // Mo dialog
-        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_17__dialogs_submit_dialog__["a" /* SubmitDialog */], {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_16__dialogs_submit_dialog__["a" /* SubmitDialog */], {
             width: '600px',
             data: {
                 data: _data
@@ -717,84 +729,66 @@ var CommonComponent = (function () {
         return 0;
     };
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_5__common_types_answer_answer_component__["a" /* AnswerComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_4__common_types_answer_answer_component__["a" /* AnswerComponent */]), 
         __metadata('design:type', (typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _a) || Object)
     ], CommonComponent.prototype, "answerComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_6__common_types_feature_feature_component__["a" /* FeatureComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_5__common_types_feature_feature_component__["a" /* FeatureComponent */]), 
         __metadata('design:type', (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _b) || Object)
     ], CommonComponent.prototype, "featureComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_7__common_types_multiple_multiple_component__["a" /* MultipleComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_6__common_types_multiple_multiple_component__["a" /* MultipleComponent */]), 
         __metadata('design:type', (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _c) || Object)
     ], CommonComponent.prototype, "multipleComponent", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_8__common_types_note_note_component__["a" /* NoteComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_7__common_types_note_note_component__["a" /* NoteComponent */]), 
         __metadata('design:type', (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _d) || Object)
     ], CommonComponent.prototype, "noteComponent", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_9__common_types_single_single_component__["a" /* SingleComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_8__common_types_single_single_component__["a" /* SingleComponent */]), 
         __metadata('design:type', (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _e) || Object)
     ], CommonComponent.prototype, "singleComponent", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_10__common_types_table_table_component__["a" /* TableComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_9__common_types_table_table_component__["a" /* TableComponent */]), 
         __metadata('design:type', (typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _f) || Object)
     ], CommonComponent.prototype, "tableComponent", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_16__reading_types_true_false_true_false_component__["a" /* TrueFalseComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_15__reading_types_true_false_true_false_component__["a" /* TrueFalseComponent */]), 
         __metadata('design:type', (typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _g) || Object)
     ], CommonComponent.prototype, "trueFalseComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_12__reading_types_heading_heading_component__["a" /* HeadingComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_11__reading_types_heading_heading_component__["a" /* HeadingComponent */]), 
         __metadata('design:type', (typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _h) || Object)
     ], CommonComponent.prototype, "headingComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_15__reading_types_summary_select_summary_select_component__["a" /* SummarySelectComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_14__reading_types_summary_select_summary_select_component__["a" /* SummarySelectComponent */]), 
         __metadata('design:type', (typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _j) || Object)
     ], CommonComponent.prototype, "summarySelectComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_11__reading_types_ending_ending_component__["a" /* EndingComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_10__reading_types_ending_ending_component__["a" /* EndingComponent */]), 
         __metadata('design:type', (typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _k) || Object)
     ], CommonComponent.prototype, "endingComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_13__reading_types_information_information_component__["a" /* InformationComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_12__reading_types_information_information_component__["a" /* InformationComponent */]), 
         __metadata('design:type', (typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _l) || Object)
     ], CommonComponent.prototype, "informationComponents", void 0);
     __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_14__reading_types_sentence_sentence_component__["a" /* SentenceComponent */]), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChildren"])(__WEBPACK_IMPORTED_MODULE_13__reading_types_sentence_sentence_component__["a" /* SentenceComponent */]), 
         __metadata('design:type', (typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["QueryList"]) === 'function' && _m) || Object)
     ], CommonComponent.prototype, "sentenceComponents", void 0);
     CommonComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-common',
             template: __webpack_require__(884),
-            styles: [__webpack_require__(291)],
+            styles: [__webpack_require__(192)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _o) || Object, (typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _p) || Object, (typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _q) || Object, (typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _r) || Object, (typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */]) === 'function' && _s) || Object])
+        __metadata('design:paramtypes', [(typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _o) || Object, (typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _p) || Object, (typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _q) || Object, (typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _r) || Object])
     ], CommonComponent);
     return CommonComponent;
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
 }());
 //# sourceMappingURL=D:/projects/ielts-front/src/common.component.js.map
-
-/***/ }),
-
-/***/ 291:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, ".question-block {\r\n  border: 2px solid #1E88E5;\r\n  padding: 5px;\r\n  display: inline-block;\r\n}\r\n\r\n.question-block > p {\r\n  margin: 0px;\r\n  font-size: larger;\r\n}\r\n\r\nmd-tab-group {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n  margin-bottom: 5px;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
 
 /***/ }),
 
@@ -805,7 +799,7 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_user_service__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_account_service__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_global_service__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
@@ -967,7 +961,7 @@ var FeatureComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_converter_service__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MultipleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1392,7 +1386,6 @@ var HeadingComponent = (function () {
     function HeadingComponent(converterService) {
         this.converterService = converterService;
         this.answers = [];
-        this.duplicatable = false;
         this.mark = 'roman';
     }
     HeadingComponent.prototype.ngOnInit = function () {
@@ -1432,10 +1425,6 @@ var HeadingComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
         __metadata('design:type', Object)
     ], HeadingComponent.prototype, "data", void 0);
-    __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
-        __metadata('design:type', Number)
-    ], HeadingComponent.prototype, "sectionNumber", void 0);
     HeadingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-heading',
@@ -1698,9 +1687,9 @@ var TrueFalseComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account_service__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_service__ = __webpack_require__(96);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AttemptService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1748,7 +1737,7 @@ var AttemptService = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_converter_service__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(466);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubmitDialog; });
@@ -1813,11 +1802,10 @@ var SubmitDialog = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_global_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_common_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(273);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListeningComponent; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1838,30 +1826,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ListeningComponent = (function (_super) {
     __extends(ListeningComponent, _super);
-    function ListeningComponent(_dialog, _snackBar, _getDataService, _activatedRoute, _global) {
-        _super.call(this, _dialog, _snackBar, _getDataService, _activatedRoute, _global);
+    function ListeningComponent(_dialog, _snackBar, _getDataService, _activatedRoute) {
+        _super.call(this, _dialog, _snackBar, _getDataService, _activatedRoute);
         this._dialog = _dialog;
         this._snackBar = _snackBar;
         this._getDataService = _getDataService;
         this._activatedRoute = _activatedRoute;
-        this._global = _global;
         this.skill = 'listening';
     }
     ListeningComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-listening',
             template: __webpack_require__(886),
-            styles: [__webpack_require__(291), __webpack_require__(861)],
+            styles: [__webpack_require__(192), __webpack_require__(861)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */]) === 'function' && _e) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object])
     ], ListeningComponent);
     return ListeningComponent;
-    var _a, _b, _c, _d, _e;
-}(__WEBPACK_IMPORTED_MODULE_5__common_common_component__["a" /* CommonComponent */]));
+    var _a, _b, _c, _d;
+}(__WEBPACK_IMPORTED_MODULE_4__common_common_component__["a" /* CommonComponent */]));
 //# sourceMappingURL=D:/projects/ielts-front/src/listening.component.js.map
 
 /***/ }),
@@ -1871,11 +1857,10 @@ var ListeningComponent = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_global_service__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_common_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(273);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReadingComponent; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1896,30 +1881,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ReadingComponent = (function (_super) {
     __extends(ReadingComponent, _super);
-    function ReadingComponent(_dialog, _snackBar, _getDataService, _activatedRoute, _global) {
-        _super.call(this, _dialog, _snackBar, _getDataService, _activatedRoute, _global);
+    function ReadingComponent(_dialog, _snackBar, _getDataService, _activatedRoute) {
+        _super.call(this, _dialog, _snackBar, _getDataService, _activatedRoute);
         this._dialog = _dialog;
         this._snackBar = _snackBar;
         this._getDataService = _getDataService;
         this._activatedRoute = _activatedRoute;
-        this._global = _global;
         this.skill = 'reading';
     }
     ReadingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-reading',
             template: __webpack_require__(887),
-            styles: [__webpack_require__(291), __webpack_require__(862)],
+            styles: [__webpack_require__(192), __webpack_require__(862)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_global_service__["a" /* GlobalService */]) === 'function' && _e) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object])
     ], ReadingComponent);
     return ReadingComponent;
-    var _a, _b, _c, _d, _e;
-}(__WEBPACK_IMPORTED_MODULE_5__common_common_component__["a" /* CommonComponent */]));
+    var _a, _b, _c, _d;
+}(__WEBPACK_IMPORTED_MODULE_4__common_common_component__["a" /* CommonComponent */]));
 //# sourceMappingURL=D:/projects/ielts-front/src/reading.component.js.map
 
 /***/ }),
@@ -1929,7 +1912,7 @@ var ReadingComponent = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__ = __webpack_require__(124);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpeakingComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1952,10 +1935,9 @@ var SpeakingComponent = (function () {
     SpeakingComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.testId = this.route.snapshot.params['testId'];
-        this.getDataService.getSpeakOffline().then(function (result) {
-            _this.data = result;
-            console.log(_this.data);
-        });
+        this.getDataService.findOne(this.testId, 'speaking').then(function (value) {
+            _this.data = value;
+        }, function (reason) { return console.error(reason); });
     };
     SpeakingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -1978,7 +1960,7 @@ var SpeakingComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(466);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_account_service__ = __webpack_require__(123);
@@ -2011,10 +1993,9 @@ var WritingComponent = (function () {
     WritingComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.testId = this.route.snapshot.params['testId'];
-        this.getDataService.getWriteOffline().then(function (result) {
-            _this.data = result;
-            console.log(_this.data);
-        });
+        this.getDataService.findOne(this.testId, 'writing').then(function (value) {
+            _this.data = value;
+        }, function (reason) { return console.error(reason); });
         this.acc.checkStatus().then(function (value) {
             if (value) {
                 _this.userSv.findOne(value.id).then(function (value) {
@@ -2053,7 +2034,7 @@ var WritingComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-writing',
             template: __webpack_require__(889),
-            styles: [__webpack_require__(864)],
+            styles: [__webpack_require__(192), __webpack_require__(864)],
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */], __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_account_service__["a" /* AccountService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_account_service__["a" /* AccountService */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */]) === 'function' && _e) || Object])
@@ -2204,56 +2185,6 @@ var ConverterService = (function () {
 
 /***/ }),
 
-/***/ 49:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__ = __webpack_require__(511);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__ = __webpack_require__(294);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__);
-/* unused harmony export User */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var User = (function () {
-    function User() {
-    }
-    return User;
-}());
-var GlobalService = (function () {
-    function GlobalService() {
-        // static url: string = 'http://localhost:3000';
-        this.user = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](undefined);
-    }
-    GlobalService.prototype.setUser = function (_user) {
-        this.user.next(_user);
-    };
-    GlobalService.url = '';
-    GlobalService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
-        __metadata('design:paramtypes', [])
-    ], GlobalService);
-    return GlobalService;
-}());
-//# sourceMappingURL=D:/projects/ielts-front/src/global.service.js.map
-
-/***/ }),
-
 /***/ 523:
 /***/ (function(module, exports) {
 
@@ -2296,7 +2227,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__skills_listening_listening_component__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__skills_reading_reading_component__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__skills_writing_writing_component__ = __webpack_require__(471);
@@ -2356,8 +2287,8 @@ var AppRoutingModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk__);
@@ -2369,7 +2300,7 @@ var AppRoutingModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__skills_listening_listening_component__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__skills_writing_writing_component__ = __webpack_require__(471);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__skills_speaking_speaking_component__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__skills_common_common_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__skills_common_common_component__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__reading_types_true_false_true_false_component__ = __webpack_require__(465);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_types_answer_answer_component__ = __webpack_require__(452);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__reading_types_heading_heading_component__ = __webpack_require__(461);
@@ -2384,7 +2315,7 @@ var AppRoutingModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__common_types_single_single_component__ = __webpack_require__(456);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__common_types_table_table_component__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_test_toolbar_test_toolbar_component__ = __webpack_require__(682);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_global_service__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_user_service__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_account_service__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__skills_dialogs_submit_dialog__ = __webpack_require__(467);
@@ -2817,8 +2748,8 @@ var TimerPipe = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(96);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3259,7 +3190,7 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".left-block {\r\n  width: 65%;\r\n}\r\n\r\n.right-block {\r\n  width: 33%;\r\n}\r\n\r\nmd-input-container, textarea {\r\n  width: 100%;\r\n  height: 300px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3277,7 +3208,7 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, ".left-block, .right-block {\r\n  height: 700px;\r\n  overflow: scroll;\r\n  width: 49%;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar { \r\n  display: none; \r\n}\r\n\r\n.left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, ".title {\r\n  text-align: center;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3313,7 +3244,7 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, ".box {\r\n  border: 1px solid black;\r\n  background: rgba(67, 169, 208, 0.25);\r\n  padding: 10px;\r\n}\r\n\r\nmd-card {\r\n  width: 50%;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, ".left-block {\r\n  width: 40%;\r\n}\r\n\r\n.right-block {\r\n  width: 58%;\r\n}\r\n\r\n.left-block, .right-block {\r\n  /*height: 600px;*/\r\n  /*width: 49%;*/\r\n  /*overflow: visible;*/\r\n}\r\n\r\nmd-input-container, textarea {\r\n  width: 100%;\r\n  height: 300px;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3361,7 +3292,7 @@ module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [inn
 /***/ 872:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<p class=\"heading\">{{data.heading}}</p>\n\n<div *ngFor=\"let question of data.questions; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{question.text}}</p>\n  <md-radio-group class=\"radio-group\" [(ngModel)]=\"answers[i]\">\n    <md-radio-button *ngFor=\"let choice of question.choices; let i = 'index'\" [value]=\"i + 1 | letter\">\n      <span class=\"blue margin-right\">{{i+1 | letter | uppercase}}</span>\n      {{choice}}\n    </md-radio-button>\n  </md-radio-group>\n</div>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<p *ngIf=\"data.heading\" class=\"heading\">{{data.heading}}</p>\n\n<div *ngFor=\"let question of data.questions; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{question.text}}</p>\n  <md-radio-group class=\"radio-group\" [(ngModel)]=\"answers[i]\">\n    <md-radio-button *ngFor=\"let choice of question.choices; let i = 'index'\" [value]=\"i + 1 | letter\">\n      <span class=\"blue margin-right\">{{i+1 | letter | uppercase}}</span>\n      {{choice}}\n    </md-radio-button>\n  </md-radio-group>\n</div>\n"
 
 /***/ }),
 
@@ -3459,14 +3390,14 @@ module.exports = "<md-card>\r\n  <md-card-title class=\"primary-color\">Answer S
 /***/ 886:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"0\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"data\">\n  <md-tab *ngFor=\"let section of data\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n    \n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-50\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n        </div>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n\n    </div>\n  </md-tab>\n</md-tab-group>\n"
+module.exports = "<app-test-toolbar currentPage=\"0\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20\">\n  <md-tab *ngFor=\"let section of sections; let i = 'index'\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <div class=\"left-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"right-block\">\n        <md-input-container class=\"margin-bottom-50\">\n          <textarea mdInput placeholder=\"Note\">You can take notes here but remember to transfer your answers to your answer sheet.</textarea>\n        </md-input-container>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>\n"
 
 /***/ }),
 
 /***/ 887:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"1\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"data\">\n  <md-tab *ngFor=\"let section of data\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <!-- Left-Block -->\n      <div class=\"left-block\">\n        <md-card class=\"left-card\">\n          <md-card-title class=\"blue title\">{{section.passage.heading | uppercase}}</md-card-title>\n          <md-card-subtitle>{{section.passage.sub_heading}}</md-card-subtitle>\n          <md-card-content>\n            <div *ngFor=\"let para of section.passage.paras\">\n              <p style=\"position:relative;\">\n                <b style=\"position:absolute;left:-15px\">{{para.mark | uppercase}}</b>\n                {{para.content}}\n              </p>\n            </div>\n          </md-card-content>\n        </md-card>\n      </div>\n      <!-- /Left-Block -->\n      \n      <!-- Right-Block -->\n      <div class=\"right-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-50\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'summary'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n\n          <div *ngIf=\"question.type == 'true-false'\">\n            <app-true-false [data]=\"question\"></app-true-false>\n          </div>\n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'heading'\">\n            <app-heading [data]=\"question\"\n              [sectionNumber]=\"section.section_number\"></app-heading>\n          </div>\n          <!-- <div *ngIf=\"question.type == 'single'\">\n            <app-r-single [data]=\"question\"></app-r-single>\n          </div> -->\n          <!-- <div *ngIf=\"question.type == 'summary'\">\n            <app-r-note [data]=\"question\"></app-r-note>\n          </div> -->\n          <div *ngIf=\"question.type == 'summary-select'\">\n            <app-summary-select [data]=\"question\"></app-summary-select>\n          </div>\n          <div *ngIf=\"question.type == 'sentence'\">\n            <app-sentence [data]=\"question\"></app-sentence>\n          </div>\n          <div *ngIf=\"question.type == 'ending'\">\n            <app-ending [data]=\"question\"></app-ending>\n          </div>\n          <div *ngIf=\"question.type == 'information'\">\n            <app-information [data]=\"question\"\n              [sectionNumber]=\"section.section_number\"></app-information>\n          </div>\n          \n        </div>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n      <!-- /Right-Block -->\n\n    </div>\n  </md-tab>\n</md-tab-group>\n"
+module.exports = "<app-test-toolbar currentPage=\"1\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20\">\n  <md-tab *ngFor=\"let section of sections\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <!-- Left-Block -->\n      <div class=\"left-block\">\n        <md-card class=\"left-card\">\n          <md-card-title class=\"blue title\">{{section.passage.heading | uppercase}}</md-card-title>\n          <md-card-subtitle>{{section.passage.sub_heading}}</md-card-subtitle>\n          <md-card-content>\n            <div *ngFor=\"let para of section.passage.paras\">\n              <p style=\"position:relative;\">\n                <b style=\"position:absolute;left:-15px\">{{para.mark | uppercase}}</b>\n                {{para.content}}\n              </p>\n            </div>\n          </md-card-content>\n        </md-card>\n      </div>\n      <!-- /Left-Block -->\n      \n      <!-- Right-Block -->\n      <div class=\"right-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n\n          <div *ngIf=\"question.type == 'true-false'\">\n            <app-true-false [data]=\"question\"></app-true-false>\n          </div>\n          <div *ngIf=\"question.type == 'heading'\">\n            <app-heading [data]=\"question\"></app-heading>\n          </div>\n          <div *ngIf=\"question.type == 'summary-select'\">\n            <app-summary-select [data]=\"question\"></app-summary-select>\n          </div>\n          <div *ngIf=\"question.type == 'sentence'\">\n            <app-sentence [data]=\"question\"></app-sentence>\n          </div>\n          <div *ngIf=\"question.type == 'ending'\">\n            <app-ending [data]=\"question\"></app-ending>\n          </div>\n          <div *ngIf=\"question.type == 'information'\">\n            <app-information [data]=\"question\"\n              [sectionNumber]=\"section.section_number\"></app-information>\n          </div>\n        </div>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n      <!-- /Right-Block -->\n\n    </div>\n  </md-tab>\n</md-tab-group>\n"
 
 /***/ }),
 
@@ -3480,7 +3411,7 @@ module.exports = "<app-test-toolbar currentPage=\"3\" [testId]=\"testId\"></app-
 /***/ 889:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"2\" [testId]=\"testId\"></app-test-toolbar>\n\n<md-input-container>\n  <textarea mdInput [(ngModel)]=\"task1\" placeholder=\"Task 1\"></textarea>\n</md-input-container>\n<md-input-container>\n  <textarea mdInput [(ngModel)]=\"task2\" placeholder=\"Task 2\"></textarea>\n</md-input-container>\n<button md-raised-button (click)=\"submit()\" [disabled]=\"isDisabled()\" color=\"primary\">\n  <span *ngIf=\"!isDisabled() || !isSubmitted\">Submit</span>\n  <span *ngIf=\"isSubmitted && isDisabled()\">Submitted</span>\n</button>\n\n<div class=\"padding-20\" *ngIf=\"data\">\n  <md-card>\n    <md-card-title class=\"primary-color center\">Writing Task 1</md-card-title>\n    <md-card-subtitle>You should spend about 20 minutes on this task.</md-card-subtitle>\n    <md-card-content>\n      <div class=\"box\">\n        <p *ngFor=\"let text of data.task_1.text\">{{text}}</p>\n      </div>\n      <p>Write at least 150 words.</p>\n      <div class=\"space-20\"></div>\n      <img src=\"http://content.ieltsonlinetests.com/fileman/Uploads/Images/ielts/practice%203/percentage-of-water-used-for-different-purposes.png\">\n    </md-card-content>\n  </md-card>\n\n  <div class=\"space-20\"></div>\n\n  <md-card>\n    <md-card-title class=\"primary-color center\">Writing Task 2</md-card-title>\n    <md-card-subtitle>You should spend about 40 minutes on this task.</md-card-subtitle>\n    <md-card-content>\n      <p>Write about the following topic:</p>\n      <div class=\"box\">\n        <p *ngFor=\"let text of data.task_2.text\">{{text}}</p>\n      </div>\n      <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>\n      <p>Write at least 250 words.</p>\n    </md-card-content>\n  </md-card>\n</div>\n"
+module.exports = "<app-test-toolbar currentPage=\"2\" [testId]=\"testId\"></app-test-toolbar>\n\n<div class=\"padding-20\" *ngIf=\"data\">\n  <div class=\"left-block\">\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 1</md-card-title>\n      <md-card-subtitle>You should spend about 20 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_1.text\">{{text}}</p></td></tr></table>\n        <p>Write at least 150 words.</p>\n        <div class=\"space-20\"></div>\n        <img src=\"http://content.ieltsonlinetests.com/fileman/Uploads/Images/ielts/practice%203/percentage-of-water-used-for-different-purposes.png\">\n      </md-card-content>\n    </md-card>\n\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 2</md-card-title>\n      <md-card-subtitle>You should spend about 40 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <p>Write about the following topic:</p>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_2.text\">{{text}}</p></td></tr></table>\n        <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>\n        <p>Write at least 250 words.</p>\n      </md-card-content>\n    </md-card>\n  </div>\n\n  <div class=\"right-block\">\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task1\" placeholder=\"Task 1\"></textarea>\n    </md-input-container>\n\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task2\" placeholder=\"Task 2\"></textarea>\n    </md-input-container>\n\n    <div class=\"action-block margin-bottom-20\">\n      <button md-raised-button (click)=\"submit()\" [disabled]=\"isDisabled()\" color=\"primary\">\n        <span *ngIf=\"!isDisabled() || !isSubmitted\">Submit</span>\n        <span *ngIf=\"isSubmitted && isDisabled()\">Submitted</span>\n      </button>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -3489,6 +3420,56 @@ module.exports = "<app-test-toolbar currentPage=\"2\" [testId]=\"testId\"></app-
 
 module.exports = __webpack_require__(524);
 
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_startWith__);
+/* unused harmony export User */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var User = (function () {
+    function User() {
+    }
+    return User;
+}());
+var GlobalService = (function () {
+    function GlobalService() {
+        this.user = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](undefined);
+    }
+    GlobalService.prototype.setUser = function (_user) {
+        this.user.next(_user);
+    };
+    // static url: string = '';
+    GlobalService.url = 'http://localhost:3000';
+    GlobalService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
+        __metadata('design:paramtypes', [])
+    ], GlobalService);
+    return GlobalService;
+}());
+//# sourceMappingURL=D:/projects/ielts-front/src/global.service.js.map
 
 /***/ })
 

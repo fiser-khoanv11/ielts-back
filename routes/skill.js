@@ -13,6 +13,16 @@ var listeningSchema = new Schema({
 }, { collection: 'listenings' });
 var Listening = mongoose.model('Listening', listeningSchema);
 
+var writingSchema = new Schema({
+    id: Number,
+}, { collection: 'writing' });
+var Writing = mongoose.model('Writing', writingSchema);
+
+var speakingSchema = new Schema({
+    id: Number,
+}, { collection: 'speaking' });
+var Speaking = mongoose.model('Speaking', speakingSchema);
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -35,6 +45,20 @@ router.get('/find-one/:skill/:testId', function (req, res) {
     }).findOne(function(err, listening) {
       if (err) res.send(err);
       res.send(listening);
+    });
+  } else if (skill == 'writing') {
+    Writing.where({
+      test_id: testId
+    }).findOne(function(err, writing) {
+      if (err) res.send(err);
+      res.send(writing);
+    });
+  } else if (skill == 'speaking') {
+    Speaking.where({
+      test_id: testId
+    }).findOne(function(err, speaking) {
+      if (err) res.send(err);
+      res.send(speaking);
     });
   }
 });
