@@ -259,7 +259,7 @@ function updateLink(linkElement, obj) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(841);
+var content = __webpack_require__(840);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(522)(content, {});
@@ -286,7 +286,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(842);
+var content = __webpack_require__(841);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(522)(content, {});
@@ -307,7 +307,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 841:
+/***/ 840:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)();
@@ -322,7 +322,7 @@ exports.push([module.i, "/**\n * Applies styles for users in high contrast mode.
 
 /***/ }),
 
-/***/ 842:
+/***/ 841:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)();
@@ -330,7 +330,7 @@ exports = module.exports = __webpack_require__(9)();
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/*@import '~@angular/material/core/theming/prebuilt/dee';*/\n\nbody {\n  /*font-family: 'Roboto';*/\n  margin: 0px;\n}\n\n.padding-50 {\n  padding: 50px;\n}\n\n.padding-20 {\n  padding: 20px;\n}\n\n.margin-bottom-50 {\n  margin-bottom: 50px;\n}\n\n.margin-bottom-20 {\n  margin-bottom: 20px;\n}\n\n.margin-right-10 {\n  margin-right: 10px;\n}\n\np {\n  text-align: justify;\n}\n\n/*input, .md-select-value {\n  color: #1E88E5 !important;\n}*/\n\n.inline-flex {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n}\n\n.space-20 {\n  height: 20px;\n}\n\n.italic {\n  font-style: italic;\n}\n\n.mat-toolbar-layout, .mat-toolbar-row {\n  height: 100% !important;\n  min-height: 0px !important;\n}\n\n.blue, .heading, b, .primary-color, .mat-select-value-text, input, .md-select-value {\n  color: #1E88E5 !important;\n}\n\n.bold {\n  font-weight: bold;\n}\n\n.format-table {\n  border-collapse: collapse;\n  background: rgba(67, 169, 208, 0.25);\n  border: 2px solid #1E88E5;\n  margin: auto;\n}\n\n.format-table > tbody > tr > td {\n  border: 1px solid #9E9E9E;\n  padding: 5px;\n}\n\n.heading {\n  margin-bottom: 50px;\n  text-align: center;\n  font-size: x-large;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/*@import '~@angular/material/core/theming/prebuilt/dee';*/\n\nbody {\n  /*font-family: 'Roboto';*/\n  background: #F5F5F5;\n  margin: 0px;\n  font-family: Roboto,\"Helvetica Neue\",sans-serif;\n}\n\n.padding-50 {\n  padding: 50px;\n}\n\n.padding-20 {\n  padding: 20px;\n}\n\n.margin-bottom-50 {\n  margin-bottom: 50px;\n}\n\n.margin-bottom-20 {\n  margin-bottom: 20px;\n}\n\n.margin-right-10 {\n  margin-right: 10px;\n}\n\np {\n  text-align: justify;\n}\n\n/*input, .md-select-value {\n  color: #1E88E5 !important;\n}*/\n\n.inline-flex {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n}\n\n.space-20 {\n  height: 20px;\n}\n\n.italic {\n  font-style: italic;\n}\n\n.mat-toolbar-layout, .mat-toolbar-row {\n  height: 100% !important;\n  min-height: 0px !important;\n}\n\n.blue, .heading, b, .primary-color, .mat-select-value-text, input, .md-select-value {\n  color: #1E88E5 !important;\n}\n\n.bold {\n  font-weight: bold;\n}\n\n.format-table {\n  border-collapse: collapse;\n  background: rgba(67, 169, 208, 0.25);\n  border: 2px solid #1E88E5;\n  margin: auto;\n}\n\n.format-table > tbody > tr > td {\n  border: 1px solid #9E9E9E;\n  padding: 5px;\n}\n\n.heading {\n  margin-bottom: 50px;\n  text-align: center;\n  font-size: x-large;\n}\n", ""]);
 
 // exports
 

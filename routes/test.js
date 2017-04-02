@@ -26,4 +26,16 @@ router.get('/find', function (req, res) {
   });
 });
 
+router.get('/find-one/:testId', function (req, res) {
+  Test.findOne({
+    id: parseInt(req.params.testId)
+  }, function(err, test) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(test);
+    }
+  });
+});
+
 module.exports = router;
