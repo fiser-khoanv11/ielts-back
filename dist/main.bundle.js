@@ -6,7 +6,7 @@ webpackJsonp([0,3],{
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_facebook_sdk__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_facebook_sdk__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_facebook_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_facebook_sdk__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -567,15 +567,15 @@ var UserService = (function () {
 
 /***/ }),
 
-/***/ 192:
+/***/ 132:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
 // module
-exports.push([module.i, ".left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-block, .right-block {\r\n  height: 600px;\r\n  width: 49%;\r\n  overflow: scroll;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar { \r\n  display: none; \r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.question-block {\r\n  /*box-sizing: border-box;*/\r\n  border: 1px solid #EEEEEE;\r\n  /*padding: 5px;*/\r\n  /*display: inline-block;*/\r\n  display: block;\r\n  border-width: 0 0 2px 0;\r\n\r\n}\r\n\r\n.question-block > p {\r\n  display: inline-block;\r\n  position: relative;\r\n  top: 1px;\r\n  margin: 0px;\r\n  padding: 5px;\r\n  font-size: larger;\r\n  border: 2px solid #1E88E5;\r\n  border-width: 0 0 1px 0;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
+exports.push([module.i, ".left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-block, .right-block {\r\n  height: 600px;\r\n  width: 49%;\r\n  overflow: scroll;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar { \r\n  display: none; \r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n  margin-bottom: 20px;\r\n  font-family: 'Poppins', sans-serif;\r\n}\r\n\r\n.question-block {\r\n  /*box-sizing: border-box;*/\r\n  border: 1px solid #EEEEEE;\r\n  /*padding: 5px;*/\r\n  /*display: inline-block;*/\r\n  display: block;\r\n  border-width: 0 0 2px 0;\r\n\r\n}\r\n\r\n.question-block > p {\r\n  display: inline-block;\r\n  position: relative;\r\n  top: 1px;\r\n  margin: 0px;\r\n  padding: 5px;\r\n  font-size: larger;\r\n  border: 2px solid #1E88E5;\r\n  border-width: 0 0 1px 0;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n  cursor: default;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
 
 // exports
 
@@ -590,22 +590,71 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(96);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TestService = (function () {
+    function TestService(http) {
+        this.http = http;
+    }
+    TestService.prototype.find = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/test/find').subscribe(function (response) {
+                resolve(response.json());
+            });
+        });
+    };
+    TestService.prototype.findOne = function (testId) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/test/find-one/' + testId).subscribe(function (value) { return resolve(value.json()); }, function (error) { return reject(error); });
+        });
+    };
+    TestService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
+    ], TestService);
+    return TestService;
+    var _a;
+}());
+//# sourceMappingURL=D:/projects/ielts-front/src/test.service.js.map
+
+/***/ }),
+
+/***/ 273:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_types_answer_answer_component__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_types_feature_feature_component__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_types_multiple_multiple_component__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_types_note_note_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_types_single_single_component__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__common_types_table_table_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reading_types_ending_ending_component__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__reading_types_heading_heading_component__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__reading_types_information_information_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__reading_types_sentence_sentence_component__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__reading_types_summary_select_summary_select_component__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__reading_types_true_false_true_false_component__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dialogs_submit_dialog__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_types_answer_answer_component__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_types_feature_feature_component__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common_types_multiple_multiple_component__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__common_types_note_note_component__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__common_types_single_single_component__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__common_types_table_table_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__reading_types_ending_ending_component__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__reading_types_heading_heading_component__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__reading_types_information_information_component__ = __webpack_require__(463);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__reading_types_sentence_sentence_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__reading_types_summary_select_summary_select_component__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__reading_types_true_false_true_false_component__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dialogs_submit_dialog__ = __webpack_require__(468);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommonComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -639,10 +688,9 @@ var CommonComponent = (function () {
         this.snackBar = snackBar;
         this.getDataService = getDataService;
         this.route = route;
-        this.sections = [];
         this.keys = [];
         this.isSubmited = false;
-        this.timer = 3600;
+        this.timeLeft = 3600;
     }
     CommonComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -655,18 +703,25 @@ var CommonComponent = (function () {
         }, function (reason) { return console.error(reason); });
         this.setTimer();
     };
+    CommonComponent.prototype.ngOnDestroy = function () {
+        clearInterval(this.timer);
+    };
     CommonComponent.prototype.setTimer = function () {
-        // let setting = setInterval(() => {
-        //   this.timer --;
-        //   if (this.timer == 1800) {
-        //     this.snackBar.open('30 minutes left!', 'OK', { duration: 2000 });
-        //   } else if (this.timer == 600) {
-        //     this.snackBar.open('10 minutes left!', 'OK', { duration: 2000 });
-        //   } else if (this.timer <= 0) {
-        //     clearInterval(setting);
-        //     this.viewSheet(true);
-        //   }
-        // }, 1);
+        var _this = this;
+        this.timer = setInterval(function () {
+            _this.timeLeft--;
+            if (_this.timeLeft == 1800) {
+                _this.snackBar.open('30 minutes left!', 'OK', { duration: 2000 });
+            }
+            else if (_this.timeLeft == 600) {
+                _this.snackBar.open('10 minutes left!', 'OK', { duration: 2000 });
+            }
+            else if (_this.timeLeft <= 0) {
+                clearInterval(_this.timer);
+                _this.dialog.closeAll();
+                _this.viewSheet(true);
+            }
+        }, 1000);
     };
     CommonComponent.prototype.getAnswers = function () {
         var arr = [];
@@ -706,7 +761,7 @@ var CommonComponent = (function () {
             answers: this.getAnswers(),
             keys: this.keys,
             isSubmited: this.isSubmited,
-            // isTimeout: isTimeout,
+            isTimeout: isTimeout,
             skill: this.skill,
             testId: this.testId
         };
@@ -779,8 +834,8 @@ var CommonComponent = (function () {
     CommonComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-common',
-            template: __webpack_require__(883),
-            styles: [__webpack_require__(192)],
+            template: __webpack_require__(889),
+            styles: [__webpack_require__(132)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _o) || Object, (typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _p) || Object, (typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _q) || Object, (typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _r) || Object])
@@ -792,7 +847,7 @@ var CommonComponent = (function () {
 
 /***/ }),
 
-/***/ 450:
+/***/ 451:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -800,7 +855,7 @@ var CommonComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_user_service__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_app_services_account_service__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_app_services_global_service__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -842,8 +897,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
-            template: __webpack_require__(866),
-            styles: [__webpack_require__(842)],
+            template: __webpack_require__(870),
+            styles: [__webpack_require__(844)],
             providers: [__WEBPACK_IMPORTED_MODULE_1_app_services_user_service__["a" /* UserService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__["FacebookService"] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4_ng2_facebook_sdk__["FacebookService"]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_app_services_user_service__["a" /* UserService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1_app_services_user_service__["a" /* UserService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_app_services_global_service__["a" /* GlobalService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3_app_services_global_service__["a" /* GlobalService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_app_services_account_service__["a" /* AccountService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2_app_services_account_service__["a" /* AccountService */]) === 'function' && _d) || Object])
@@ -855,7 +910,7 @@ var AppComponent = (function () {
 
 /***/ }),
 
-/***/ 451:
+/***/ 452:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -888,8 +943,8 @@ var AnswerComponent = (function () {
     AnswerComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-answer',
-            template: __webpack_require__(867),
-            styles: [__webpack_require__(843)]
+            template: __webpack_require__(871),
+            styles: [__webpack_require__(845)]
         }), 
         __metadata('design:paramtypes', [])
     ], AnswerComponent);
@@ -899,7 +954,7 @@ var AnswerComponent = (function () {
 
 /***/ }),
 
-/***/ 452:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -940,8 +995,8 @@ var FeatureComponent = (function () {
     FeatureComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-feature',
-            template: __webpack_require__(868),
-            styles: [__webpack_require__(844)],
+            template: __webpack_require__(872),
+            styles: [__webpack_require__(846)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -953,7 +1008,7 @@ var FeatureComponent = (function () {
 
 /***/ }),
 
-/***/ 453:
+/***/ 454:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1013,8 +1068,8 @@ var MultipleComponent = (function () {
     MultipleComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-multiple',
-            template: __webpack_require__(869),
-            styles: [__webpack_require__(845)],
+            template: __webpack_require__(873),
+            styles: [__webpack_require__(847)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _b) || Object])
@@ -1026,7 +1081,7 @@ var MultipleComponent = (function () {
 
 /***/ }),
 
-/***/ 454:
+/***/ 455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1075,8 +1130,8 @@ var NoteComponent = (function () {
     NoteComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-note',
-            template: __webpack_require__(870),
-            styles: [__webpack_require__(846)],
+            template: __webpack_require__(874),
+            styles: [__webpack_require__(848)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1088,7 +1143,7 @@ var NoteComponent = (function () {
 
 /***/ }),
 
-/***/ 455:
+/***/ 456:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1124,8 +1179,8 @@ var SingleComponent = (function () {
     SingleComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-single',
-            template: __webpack_require__(871),
-            styles: [__webpack_require__(847)]
+            template: __webpack_require__(875),
+            styles: [__webpack_require__(849)]
         }), 
         __metadata('design:paramtypes', [])
     ], SingleComponent);
@@ -1135,7 +1190,7 @@ var SingleComponent = (function () {
 
 /***/ }),
 
-/***/ 456:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1201,8 +1256,8 @@ var TableComponent = (function () {
     TableComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-table',
-            template: __webpack_require__(872),
-            styles: [__webpack_require__(848)],
+            template: __webpack_require__(876),
+            styles: [__webpack_require__(850)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1214,7 +1269,95 @@ var TableComponent = (function () {
 
 /***/ }),
 
-/***/ 457:
+/***/ 458:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_test_service__ = __webpack_require__(272);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HomeComponent = (function () {
+    function HomeComponent(testSv) {
+        this.testSv = testSv;
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.testSv.find().then(function (result) {
+            _this.tests = result;
+        });
+    };
+    HomeComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-test',
+            template: __webpack_require__(880),
+            styles: [__webpack_require__(854)],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]]
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]) === 'function' && _a) || Object])
+    ], HomeComponent);
+    return HomeComponent;
+    var _a;
+}());
+//# sourceMappingURL=D:/projects/ielts-front/src/home.component.js.map
+
+/***/ }),
+
+/***/ 459:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_test_service__ = __webpack_require__(272);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LibraryComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LibraryComponent = (function () {
+    function LibraryComponent(testSv) {
+        this.testSv = testSv;
+    }
+    LibraryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.testSv.find().then(function (result) {
+            _this.tests = result;
+        });
+    };
+    LibraryComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-library',
+            template: __webpack_require__(881),
+            styles: [__webpack_require__(855)],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]]
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]) === 'function' && _a) || Object])
+    ], LibraryComponent);
+    return LibraryComponent;
+    var _a;
+}());
+//# sourceMappingURL=D:/projects/ielts-front/src/library.component.js.map
+
+/***/ }),
+
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1250,8 +1393,8 @@ var ResultComponent = (function () {
     ResultComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-result',
-            template: __webpack_require__(875),
-            styles: [__webpack_require__(851)]
+            template: __webpack_require__(882),
+            styles: [__webpack_require__(856)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_user_service__["a" /* UserService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_account_service__["a" /* AccountService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_account_service__["a" /* AccountService */]) === 'function' && _b) || Object])
     ], ResultComponent);
@@ -1262,52 +1405,7 @@ var ResultComponent = (function () {
 
 /***/ }),
 
-/***/ 458:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_test_service__ = __webpack_require__(466);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var TestComponent = (function () {
-    function TestComponent(testService) {
-        this.testService = testService;
-    }
-    TestComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.testService.find().then(function (result) {
-            _this.tests = result;
-        });
-        this.cardWidth = (window.innerHeight - 64 * 2 - 20) + 'px';
-    };
-    TestComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-test',
-            template: __webpack_require__(876),
-            styles: [__webpack_require__(852)],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]]
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]) === 'function' && _a) || Object])
-    ], TestComponent);
-    return TestComponent;
-    var _a;
-}());
-//# sourceMappingURL=D:/projects/ielts-front/src/test.component.js.map
-
-/***/ }),
-
-/***/ 459:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1348,8 +1446,8 @@ var EndingComponent = (function () {
     EndingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-ending',
-            template: __webpack_require__(877),
-            styles: [__webpack_require__(853)],
+            template: __webpack_require__(883),
+            styles: [__webpack_require__(857)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1361,7 +1459,7 @@ var EndingComponent = (function () {
 
 /***/ }),
 
-/***/ 460:
+/***/ 462:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1426,8 +1524,8 @@ var HeadingComponent = (function () {
     HeadingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-heading',
-            template: __webpack_require__(878),
-            styles: [__webpack_require__(854)],
+            template: __webpack_require__(884),
+            styles: [__webpack_require__(858)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1439,7 +1537,7 @@ var HeadingComponent = (function () {
 
 /***/ }),
 
-/***/ 461:
+/***/ 463:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1483,8 +1581,8 @@ var InformationComponent = (function () {
     InformationComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-information',
-            template: __webpack_require__(879),
-            styles: [__webpack_require__(855)],
+            template: __webpack_require__(885),
+            styles: [__webpack_require__(859)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1496,7 +1594,7 @@ var InformationComponent = (function () {
 
 /***/ }),
 
-/***/ 462:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1538,8 +1636,8 @@ var SentenceComponent = (function () {
     SentenceComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-sentence',
-            template: __webpack_require__(880),
-            styles: [__webpack_require__(856)]
+            template: __webpack_require__(886),
+            styles: [__webpack_require__(860)]
         }), 
         __metadata('design:paramtypes', [])
     ], SentenceComponent);
@@ -1549,7 +1647,7 @@ var SentenceComponent = (function () {
 
 /***/ }),
 
-/***/ 463:
+/***/ 465:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1611,8 +1709,8 @@ var SummarySelectComponent = (function () {
     SummarySelectComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-summary-select',
-            template: __webpack_require__(881),
-            styles: [__webpack_require__(857)],
+            template: __webpack_require__(887),
+            styles: [__webpack_require__(861)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_converter_service__["a" /* ConverterService */]) === 'function' && _a) || Object])
@@ -1624,7 +1722,7 @@ var SummarySelectComponent = (function () {
 
 /***/ }),
 
-/***/ 464:
+/***/ 466:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1669,8 +1767,8 @@ var TrueFalseComponent = (function () {
     TrueFalseComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-true-false',
-            template: __webpack_require__(882),
-            styles: [__webpack_require__(858)]
+            template: __webpack_require__(888),
+            styles: [__webpack_require__(862)]
         }), 
         __metadata('design:paramtypes', [])
     ], TrueFalseComponent);
@@ -1680,7 +1778,7 @@ var TrueFalseComponent = (function () {
 
 /***/ }),
 
-/***/ 465:
+/***/ 467:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1730,63 +1828,14 @@ var AttemptService = (function () {
 
 /***/ }),
 
-/***/ 466:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__global_service__ = __webpack_require__(96);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TestService = (function () {
-    function TestService(http) {
-        this.http = http;
-    }
-    TestService.prototype.find = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/test/find').subscribe(function (response) {
-                resolve(response.json());
-            });
-        });
-    };
-    TestService.prototype.findOne = function (testId) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.http.get(__WEBPACK_IMPORTED_MODULE_2__global_service__["a" /* GlobalService */].url + '/api/test/find-one/' + testId).subscribe(function (value) { return resolve(value.json()); }, function (error) { return reject(error); });
-        });
-    };
-    TestService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === 'function' && _a) || Object])
-    ], TestService);
-    return TestService;
-    var _a;
-}());
-//# sourceMappingURL=D:/projects/ielts-front/src/test.service.js.map
-
-/***/ }),
-
-/***/ 467:
+/***/ 468:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_converter_service__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(467);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubmitDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1815,6 +1864,8 @@ var SubmitDialog = (function () {
     SubmitDialog.prototype.ngOnInit = function () {
         this.data = this.dialogRef.config.data.data;
         this.testResult = this.converter.getTestResult(this.data.answers, this.data.keys);
+        if (this.data.isTimeout)
+            this.submit();
     };
     SubmitDialog.prototype.ngOnDestroy = function () {
         this.dialogRef.close(this.data.isSubmited);
@@ -1831,8 +1882,8 @@ var SubmitDialog = (function () {
     SubmitDialog = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-submit',
-            template: __webpack_require__(884),
-            styles: [__webpack_require__(859)],
+            template: __webpack_require__(890),
+            styles: [__webpack_require__(863)],
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_converter_service__["a" /* ConverterService */], __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdDialogRef */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MdDialogRef */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_converter_service__["a" /* ConverterService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_converter_service__["a" /* ConverterService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]) === 'function' && _c) || Object])
@@ -1844,7 +1895,7 @@ var SubmitDialog = (function () {
 
 /***/ }),
 
-/***/ 468:
+/***/ 469:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1852,7 +1903,7 @@ var SubmitDialog = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(273);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListeningComponent; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1886,8 +1937,8 @@ var ListeningComponent = (function (_super) {
     ListeningComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-listening',
-            template: __webpack_require__(885),
-            styles: [__webpack_require__(192), __webpack_require__(860)],
+            template: __webpack_require__(891),
+            styles: [__webpack_require__(132), __webpack_require__(864)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object])
@@ -1899,7 +1950,7 @@ var ListeningComponent = (function (_super) {
 
 /***/ }),
 
-/***/ 469:
+/***/ 470:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1907,7 +1958,7 @@ var ListeningComponent = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_common_component__ = __webpack_require__(273);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReadingComponent; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -1941,8 +1992,8 @@ var ReadingComponent = (function (_super) {
     ReadingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-reading',
-            template: __webpack_require__(886),
-            styles: [__webpack_require__(192), __webpack_require__(861)],
+            template: __webpack_require__(892),
+            styles: [__webpack_require__(132), __webpack_require__(865)],
             providers: [__WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_material__["c" /* MdSnackBar */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_get_data_service__["a" /* GetDataService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _d) || Object])
@@ -1954,7 +2005,7 @@ var ReadingComponent = (function (_super) {
 
 /***/ }),
 
-/***/ 470:
+/***/ 471:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1989,8 +2040,8 @@ var SpeakingComponent = (function () {
     SpeakingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-speaking',
-            template: __webpack_require__(887),
-            styles: [__webpack_require__(862)],
+            template: __webpack_require__(893),
+            styles: [__webpack_require__(132), __webpack_require__(866)],
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object])
@@ -2002,14 +2053,14 @@ var SpeakingComponent = (function () {
 
 /***/ }),
 
-/***/ 471:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__ = __webpack_require__(467);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_account_service__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_service__ = __webpack_require__(125);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WritingComponent; });
@@ -2080,8 +2131,8 @@ var WritingComponent = (function () {
     WritingComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-writing',
-            template: __webpack_require__(888),
-            styles: [__webpack_require__(192), __webpack_require__(863)],
+            template: __webpack_require__(894),
+            styles: [__webpack_require__(132), __webpack_require__(867)],
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */], __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_get_data_service__["a" /* GetDataService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_attempt_service__["a" /* AttemptService */]) === 'function' && _c) || Object, (typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_account_service__["a" /* AccountService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_4__services_account_service__["a" /* AccountService */]) === 'function' && _d) || Object, (typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_5__services_user_service__["a" /* UserService */]) === 'function' && _e) || Object])
@@ -2232,7 +2283,7 @@ var ConverterService = (function () {
 
 /***/ }),
 
-/***/ 523:
+/***/ 524:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -2241,21 +2292,21 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 523;
+webpackEmptyContext.id = 524;
 
 
 /***/ }),
 
-/***/ 524:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(689);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(649);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(691);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(650);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(688);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app___ = __webpack_require__(683);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(690);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app___ = __webpack_require__(685);
 
 
 
@@ -2269,18 +2320,19 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 679:
+/***/ 680:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__skills_listening_listening_component__ = __webpack_require__(468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__skills_reading_reading_component__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__skills_writing_writing_component__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__skills_speaking_speaking_component__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_test_test_component__ = __webpack_require__(458);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_result_result_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__skills_listening_listening_component__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__skills_reading_reading_component__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__skills_writing_writing_component__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__skills_speaking_speaking_component__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home_component__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_result_result_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_library_library_component__ = __webpack_require__(459);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2299,8 +2351,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_6__pages_test_test_component__["a" /* TestComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_6__pages_home_home_component__["a" /* HomeComponent */] },
+    { path: 'library', component: __WEBPACK_IMPORTED_MODULE_8__pages_library_library_component__["a" /* LibraryComponent */] },
     { path: 'reading/:testId', component: __WEBPACK_IMPORTED_MODULE_3__skills_reading_reading_component__["a" /* ReadingComponent */] },
     { path: 'listening/:testId', component: __WEBPACK_IMPORTED_MODULE_2__skills_listening_listening_component__["a" /* ListeningComponent */] },
     { path: 'writing/:testId', component: __WEBPACK_IMPORTED_MODULE_4__skills_writing_writing_component__["a" /* WritingComponent */] },
@@ -2327,7 +2381,7 @@ var AppRoutingModule = (function () {
 
 /***/ }),
 
-/***/ 680:
+/***/ 681:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2337,39 +2391,41 @@ var AppRoutingModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_facebook_sdk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__(679);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_test_test_component__ = __webpack_require__(458);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_result_result_component__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__skills_reading_reading_component__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__skills_listening_listening_component__ = __webpack_require__(468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__skills_writing_writing_component__ = __webpack_require__(471);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__skills_speaking_speaking_component__ = __webpack_require__(470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__skills_common_common_component__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__reading_types_true_false_true_false_component__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_types_answer_answer_component__ = __webpack_require__(451);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__reading_types_heading_heading_component__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__reading_types_sentence_sentence_component__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__reading_types_ending_ending_component__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__reading_types_information_information_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__reading_types_summary_select_summary_select_component__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_option_list_option_list_component__ = __webpack_require__(681);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__common_types_feature_feature_component__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__common_types_multiple_multiple_component__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__common_types_note_note_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__common_types_single_single_component__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__common_types_table_table_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_test_toolbar_test_toolbar_component__ = __webpack_require__(682);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__(680);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home_component__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_result_result_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__skills_reading_reading_component__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__skills_listening_listening_component__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__skills_writing_writing_component__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__skills_speaking_speaking_component__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__skills_common_common_component__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__reading_types_true_false_true_false_component__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_types_answer_answer_component__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__reading_types_heading_heading_component__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__reading_types_sentence_sentence_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__reading_types_ending_ending_component__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__reading_types_information_information_component__ = __webpack_require__(463);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__reading_types_summary_select_summary_select_component__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_option_list_option_list_component__ = __webpack_require__(683);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__common_types_feature_feature_component__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__common_types_multiple_multiple_component__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__common_types_note_note_component__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__common_types_single_single_component__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__common_types_table_table_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_test_toolbar_test_toolbar_component__ = __webpack_require__(684);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_global_service__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_user_service__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_account_service__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__skills_dialogs_submit_dialog__ = __webpack_require__(467);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pipes_letter_pipe__ = __webpack_require__(684);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pipes_timer_pipe__ = __webpack_require__(687);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pipes_roman_pipe__ = __webpack_require__(685);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pipes_text_number_pipe__ = __webpack_require__(686);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__skills_dialogs_submit_dialog__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pipes_letter_pipe__ = __webpack_require__(686);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pipes_timer_pipe__ = __webpack_require__(689);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pipes_roman_pipe__ = __webpack_require__(687);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pipes_text_number_pipe__ = __webpack_require__(688);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_loading_loading_component__ = __webpack_require__(682);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_library_library_component__ = __webpack_require__(459);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2380,6 +2436,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -2441,7 +2499,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_18__reading_types_heading_heading_component__["a" /* HeadingComponent */],
                 __WEBPACK_IMPORTED_MODULE_36__pipes_roman_pipe__["a" /* RomanPipe */],
                 __WEBPACK_IMPORTED_MODULE_37__pipes_text_number_pipe__["a" /* TextNumberPipe */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_test_test_component__["a" /* TestComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_result_result_component__["a" /* ResultComponent */],
                 __WEBPACK_IMPORTED_MODULE_29__components_test_toolbar_test_toolbar_component__["a" /* TestToolbarComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__reading_types_sentence_sentence_component__["a" /* SentenceComponent */],
@@ -2468,6 +2526,8 @@ var AppModule = (function () {
                 // LSingleComponent,
                 // LNoteComponent,
                 __WEBPACK_IMPORTED_MODULE_15__skills_common_common_component__["a" /* CommonComponent */],
+                __WEBPACK_IMPORTED_MODULE_38__components_loading_loading_component__["a" /* LoadingComponent */],
+                __WEBPACK_IMPORTED_MODULE_39__pages_library_library_component__["a" /* LibraryComponent */],
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_33__skills_dialogs_submit_dialog__["a" /* SubmitDialog */],
@@ -2496,7 +2556,46 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 681:
+/***/ 682:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadingComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LoadingComponent = (function () {
+    function LoadingComponent() {
+    }
+    LoadingComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
+        __metadata('design:type', String)
+    ], LoadingComponent.prototype, "isShow", void 0);
+    LoadingComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-loading',
+            template: __webpack_require__(877),
+            styles: [__webpack_require__(851)]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], LoadingComponent);
+    return LoadingComponent;
+}());
+//# sourceMappingURL=D:/projects/ielts-front/src/loading.component.js.map
+
+/***/ }),
+
+/***/ 683:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2539,8 +2638,8 @@ var OptionListComponent = (function () {
     OptionListComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-option-list',
-            template: __webpack_require__(873),
-            styles: [__webpack_require__(849)]
+            template: __webpack_require__(878),
+            styles: [__webpack_require__(852)]
         }), 
         __metadata('design:paramtypes', [])
     ], OptionListComponent);
@@ -2550,12 +2649,12 @@ var OptionListComponent = (function () {
 
 /***/ }),
 
-/***/ 682:
+/***/ 684:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_test_service__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_test_service__ = __webpack_require__(272);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestToolbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2587,8 +2686,8 @@ var TestToolbarComponent = (function () {
     TestToolbarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-test-toolbar',
-            template: __webpack_require__(874),
-            styles: [__webpack_require__(850)],
+            template: __webpack_require__(879),
+            styles: [__webpack_require__(853)],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_test_service__["a" /* TestService */]) === 'function' && _a) || Object])
@@ -2600,13 +2699,13 @@ var TestToolbarComponent = (function () {
 
 /***/ }),
 
-/***/ 683:
+/***/ 685:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component__ = __webpack_require__(451);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(680);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(681);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__app_module__["a"]; });
 
 
@@ -2614,7 +2713,7 @@ var TestToolbarComponent = (function () {
 
 /***/ }),
 
-/***/ 684:
+/***/ 686:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2661,7 +2760,7 @@ var LetterPipe = (function () {
 
 /***/ }),
 
-/***/ 685:
+/***/ 687:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2709,7 +2808,7 @@ var RomanPipe = (function () {
 
 /***/ }),
 
-/***/ 686:
+/***/ 688:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2755,7 +2854,7 @@ var TextNumberPipe = (function () {
 
 /***/ }),
 
-/***/ 687:
+/***/ 689:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2797,7 +2896,7 @@ var TimerPipe = (function () {
 
 /***/ }),
 
-/***/ 688:
+/***/ 690:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2813,41 +2912,41 @@ var environment = {
 
 /***/ }),
 
-/***/ 689:
+/***/ 691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(703);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(705);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(696);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(698);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(692);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(694);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(698);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(700);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(699);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(695);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(697);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(694);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(696);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(704);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(691);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(693);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(690);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(692);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(702);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(693);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(695);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(703);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(701);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(704);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(706);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(931);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(937);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -2869,15 +2968,15 @@ var environment = {
 
 /***/ }),
 
-/***/ 842:
+/***/ 844:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
 // module
-exports.push([module.i, ".spacer {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n#copy {\r\n  font-size: small;\r\n}\r\n\r\n.fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n.nav-bar > button {\r\n  border: solid #e41937;\r\n  border-width: 0px 0px;\r\n  border-radius: 0;\r\n  height: 100%;\r\n  color: #e41937;\r\n}\r\n\r\n.nav-bar {\r\n  height: 100%;\r\n}\r\n\r\n.logo {\r\n  height: 100%;\r\n}\r\n\r\n.logo-a {\r\n  height: 50%;\r\n}\r\n\r\n.avatar {\r\n  height: 75%;\r\n  border-radius: 70%;\r\n}\r\n\r\nmd-toolbar {\r\n  height: 64px;\r\n  /*background: #EEEEEE;*/\r\n  background: white;\r\n}\r\n", ""]);
+exports.push([module.i, ".spacer {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n#copy {\r\n  font-size: small;\r\n}\r\n\r\n.fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n.nav-bar > button {\r\n  /*border: solid #e41937;\r\n  border-width: 0px 0px;\r\n  border-radius: 0;*/\r\n  height: 100%;\r\n  color: #e41937;\r\n}\r\n\r\n.nav-bar {\r\n  height: 100%;\r\n}\r\n\r\n.logo {\r\n  height: 100%;\r\n}\r\n\r\n.logo-a {\r\n  height: 50%;\r\n}\r\n\r\n.avatar {\r\n  height: 75%;\r\n  border-radius: 70%;\r\n}\r\n\r\nmd-toolbar {\r\n  height: 64px;\r\n  /*background: #EEEEEE;*/\r\n  background: white;\r\n}\r\n\r\n.header-toolbar {\r\n  border-bottom: 1px solid #e41937;\r\n  /*position: fixed;\r\n  top: 0px;\r\n  left: 0px;*/\r\n}\r\n", ""]);
 
 // exports
 
@@ -2887,10 +2986,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 843:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2905,10 +3004,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 844:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2923,10 +3022,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 845:
+/***/ 847:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2941,10 +3040,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 846:
+/***/ 848:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2959,10 +3058,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 847:
+/***/ 849:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2977,10 +3076,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 848:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -2995,10 +3094,28 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 849:
+/***/ 851:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".loading {\r\n  padding: 50px;\r\n  opacity: 0.5;\r\n}\r\n\r\nmd-progress-bar {\r\n  margin-bottom: 15px;\r\n}\r\n\r\nmd-progress-bar:nth-child(2) {\r\n  width: 40%;\r\n}\r\n\r\nmd-progress-bar:nth-child(3) {\r\n  width: 20%;\r\n}\r\n\r\nmd-progress-bar:nth-child(4) {\r\n  width: 30%;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 852:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3013,64 +3130,82 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 850:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, ".fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n#outlet {\r\n  padding: 30px;\r\n}\r\n\r\n.link {\r\n  color: rgba(255, 255, 255, 0.87);\r\n  text-decoration: none;\r\n}\r\n\r\nmd-toolbar {\r\n  min-height: 0px;\r\n  background: #e41937;\r\n}\r\n\r\n.mat-toolbar-layout, md-toolbar-row {\r\n  height: 100%;\r\n}\r\n\r\nnav > button {\r\n  border-radius: 0px;\r\n}\r\n\r\n.active {\r\n  color: #e41937;\r\n  cursor: default;\r\n}\r\n\r\n.inactive {\r\n  color: white;\r\n}\r\n\r\n.test-title {\r\n  color: white;\r\n  font-size: 75%\r\n}\r\n\r\na {\r\n  color: white;\r\n  text-decoration: none;\r\n}\r\n\r\na:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\nmd-toolbar {\r\n  height: 45px;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 851:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 852:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, ".card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\nmd-card {\r\n  border-radius: 0px;\r\n}\r\n\r\nmd-card > img {\r\n  cursor: pointer;\r\n}\r\n\r\n.over {\r\n  padding: 10px;\r\n  /*min-height: calc(100%);*/\r\n}\r\n\r\n.example-header-image {\r\n  background-image: url('http://schoolsuganda.com/uploads/articles/35/650x650/1433145871-bc.png');\r\n  background-size: cover;\r\n}\r\n\r\n.banner {\r\n  /*height: 150px;\r\n  background: #e41937;\r\n  color: white;*/\r\n  width: 100%\r\n}\r\n\r\n.header {\r\n  font-size: x-large;\r\n  color: #cb253e;\r\n  margin: 10px 0px 5px 10px;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\nnav {\r\n  position: relative;\r\n  top: 4px;\r\n}\r\n\r\nnav > button {\r\n  border-radius: 0px;\r\n}\r\n\r\n.active {\r\n  color: #e41937;\r\n  cursor: default;\r\n}\r\n\r\n.inactive {\r\n  color: white;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 854:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n}\r\n\r\n.card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 855:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, "/* Content */\r\n\r\n.banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n}\r\n\r\n.card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 856:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, "table {\r\n  text-align: center;\r\n  margin: 0px;\r\n}\r\n\r\n.overall {\r\n  padding: 30px 150px;\r\n}\r\n\r\n.section-header {\r\n  font-size: x-large;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 857:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3085,82 +3220,82 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 854:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, ".half-card {\r\n  width: 60%;\r\n}\r\n\r\n.relative {\r\n  position: relative;\r\n}\r\n\r\n.icon {\r\n  position: absolute;\r\n  top: -4px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 855:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 856:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 857:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(9)();
-// imports
-
-
-// module
-exports.push([module.i, ".half-card {\r\n  width: 60%;\r\n}\r\n\r\n.relative {\r\n  position: relative;\r\n}\r\n\r\n.icon {\r\n  position: absolute;\r\n  top: -4px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".half-card {\r\n  width: 60%;\r\n}\r\n\r\n.relative {\r\n  position: relative;\r\n}\r\n\r\n.icon {\r\n  position: absolute;\r\n  top: -4px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 859:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 860:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 861:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".half-card {\r\n  width: 60%;\r\n}\r\n\r\n.relative {\r\n  position: relative;\r\n}\r\n\r\n.icon {\r\n  position: absolute;\r\n  top: -4px;\r\n  cursor: pointer;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 862:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3175,10 +3310,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 859:
+/***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3193,10 +3328,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 860:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3211,15 +3346,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 861:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
 // module
-exports.push([module.i, ".title {\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, ".title {\r\n  text-align: center;\r\n}\r\n\r\n.left-card {\r\n  margin-bottom: 3px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3229,10 +3364,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 862:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
@@ -3247,15 +3382,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 863:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)();
+exports = module.exports = __webpack_require__(7)();
 // imports
 
 
 // module
-exports.push([module.i, ".left-block {\r\n  width: 40%;\r\n}\r\n\r\n.right-block {\r\n  width: 58%;\r\n}\r\n\r\n.left-block, .right-block {\r\n  /*height: 600px;*/\r\n  /*width: 49%;*/\r\n  /*overflow: visible;*/\r\n}\r\n\r\nmd-input-container, textarea {\r\n  width: 100%;\r\n  height: 300px;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n}\r\n", ""]);
+exports.push([module.i, ".left-block {\r\n  width: 45%;\r\n}\r\n\r\n.right-block {\r\n  width: 53%;\r\n}\r\n\r\n.left-block, .right-block {\r\n  /*height: 600px;*/\r\n  /*width: 49%;*/\r\n  /*overflow: visible;*/\r\n}\r\n\r\nmd-input-container, textarea {\r\n  width: 100%;\r\n  height: 300px;\r\n}\r\n\r\n.center {\r\n  text-align: center;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3265,171 +3400,185 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 866:
-/***/ (function(module, exports) {
-
-module.exports = "<md-toolbar>\n  <a class=\"logo-a\" href=\"/\"><img class=\"logo\" src=\"/assets/logo.png\"></a>\n  <span class=\"fill-remaining-space\"></span>\n  <nav class=\"nav-bar\">\n    <button md-button routerLink=\"/\">Library</button>\n    <button md-button *ngIf=\"!user\" (click)=\"fbLogin()\">Login</button>\n    <button md-button *ngIf=\"user\" routerLink=\"/result\">\n      <img class=\"avatar\" [src]=\"user.picture.data.url\">\n      <span>{{user.first_name}}</span>\n      <md-icon class=\"icon\">arrow_drop_down</md-icon>\n    </button>\n    <button md-button *ngIf=\"user\" (click)=\"fbLogout()\">Logout</button>\n  </nav>\n</md-toolbar>\n\n<router-outlet></router-outlet>\n\n<md-toolbar>\n  <span id=\"copy\">&copy;2017 - IELTS Online</span>\n  <span class=\"spacer\"></span>\n</md-toolbar>\n"
-
-/***/ }),
-
-/***/ 867:
-/***/ (function(module, exports) {
-
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div *ngFor=\"let text of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{text}}</p>\n  <md-input-container>\n    <input mdInput type=\"text\" [(ngModel)]=\"answers[i]\"/>\n  </md-input-container>\n</div>\n"
-
-/***/ }),
-
-/***/ 868:
-/***/ (function(module, exports) {
-
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list [list]=\"data.features\"\n                 [answers]=\"answers\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let item of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{item}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let feature of data.features; let j = 'index'\"\n               [value]=\"j + 1\">{{j + 1 | letter | uppercase}}. {{feature}}</md-option>\n  </md-select>\n</div>\n"
-
-/***/ }),
-
-/***/ 869:
-/***/ (function(module, exports) {
-
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div *ngFor=\"let item of data.choices; let i = 'index'\">\n  <md-checkbox [(ngModel)]=\"answers[i]\" (change)=\"checkLimit()\">\n    <span class=\"blue margin-right\">{{i + 1 | letter | uppercase}}</span>\n    {{item}}\n  </md-checkbox>\n</div>\n"
-
-/***/ }),
-
 /***/ 870:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div class=\"note\">\n  <p *ngIf=\"data.heading\" class=\"heading\">{{data.heading}}</p>\n  <p *ngFor=\"let para of displayParas; let i = 'index'\">\n    <span *ngFor=\"let span of para; let j = 'index'\">\n      <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n        <span md-prefix class=\"margin-right-10\" style=\"font-weight: bold\">{{span.data}}</span>\n        <input mdInput type=\"text\" [(ngModel)]=\"answers[i][j]\" placeholder=\"\"/>\n      </md-input-container>\n      <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n    </span>\n  </p>\n</div>\n\n<!-- <md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n          <b md-prefix class=\"margin-right-10\">{{span.data}} </b>\n          <input mdInput type=\"text\" [(ngModel)]=\"answers[i][j]\" placeholder=\"\"/>\n        </md-input-container>\n        <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card> -->\n"
+module.exports = "<!-- <md-toolbar></md-toolbar> -->\n\n<md-toolbar class=\"header-toolbar\">\n  <a class=\"logo-a\" href=\"/\"><img class=\"logo\" src=\"/assets/logo.png\"></a>\n  <span class=\"fill-remaining-space\"></span>\n  <nav class=\"nav-bar\">\n    <button md-button routerLink=\"/library\">Library</button>\n    <button md-button *ngIf=\"user\" routerLink=\"/result\">Result</button>\n    <button md-button *ngIf=\"!user\" (click)=\"fbLogin()\">Login</button>\n    <button md-button *ngIf=\"user\" (click)=\"fbLogout()\">Logout</button>\n    <button md-button *ngIf=\"user\">\n      <span>{{user.first_name}}</span>\n      <img class=\"avatar\" [src]=\"user.picture.data.url\">\n      <!-- <md-icon class=\"icon\">arrow_drop_down</md-icon> -->\n    </button>\n  </nav>\n</md-toolbar>\n\n<router-outlet></router-outlet>\n\n<md-toolbar>\n  <span id=\"copy\">&copy;2017 - IELTS Online</span>\n  <span class=\"spacer\"></span>\n</md-toolbar>\n"
 
 /***/ }),
 
 /***/ 871:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<p *ngIf=\"data.heading\" class=\"heading\">{{data.heading}}</p>\n\n<div *ngFor=\"let question of data.questions; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{question.text}}</p>\n  <md-radio-group class=\"radio-group\" [(ngModel)]=\"answers[i]\">\n    <md-radio-button *ngFor=\"let choice of question.choices; let i = 'index'\" [value]=\"i + 1 | letter\">\n      <span class=\"blue margin-right\">{{i+1 | letter | uppercase}}</span>\n      {{choice}}\n    </md-radio-button>\n  </md-radio-group>\n</div>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div *ngFor=\"let text of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{text}}</p>\n  <md-input-container>\n    <input mdInput type=\"text\" [(ngModel)]=\"answers[i]\"/>\n  </md-input-container>\n</div>\n"
 
 /***/ }),
 
 /***/ 872:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<table class=\"format-table\">\n  <tr *ngFor=\"let row of displayTable\">\n    <td *ngFor=\"let cell of row\">\n      <p *ngFor=\"let para of cell\" class=\"para-in-cell\">\n        <span *ngFor=\"let span of para\">\n          <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n            <span md-prefix class=\"margin-right-10\" style=\"font-weight: bold\">{{span.data}}</span>\n            <input mdInput type=\"text\" [(ngModel)]=\"answers[span.data - data.first]\" placeholder=\"\"/>\n          </md-input-container>\n          <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n        </span>\n      </p>\n    </td>\n  </tr>\n</table>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list [list]=\"data.features\"\n                 [answers]=\"answers\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let item of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{item}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let feature of data.features; let j = 'index'\"\n               [value]=\"j + 1\">{{j + 1 | letter | uppercase}}. {{feature}}</md-option>\n  </md-select>\n</div>\n"
 
 /***/ }),
 
 /***/ 873:
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"format-table\">\n  <tr *ngFor=\"let item of list; let i = 'index'\" [style.color]=\"changeColor(i + 1) ? '#1E88E5' : ''\">\n    <td>\n      <span *ngIf=\"mark == 'letter'\" class=\"blue\">{{i + 1 | letter | uppercase}}</span>\n      <span *ngIf=\"mark == 'roman'\">{{i + 1 | roman}}</span>\n    </td>\n    <td>{{item}}</td>\n  </tr>\n</table>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div *ngFor=\"let item of data.choices; let i = 'index'\">\n  <md-checkbox [(ngModel)]=\"answers[i]\" (change)=\"checkLimit()\">\n    <span class=\"blue margin-right\">{{i + 1 | letter | uppercase}}</span>\n    {{item}}\n  </md-checkbox>\n</div>\n"
 
 /***/ }),
 
 /***/ 874:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar>\n  <p class=\"test-title\">\n    <a href=\"/\">Library</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span *ngIf=\"test\">{{test.description}} - {{test.title}}</span>\n    <!-- <a href=\"/\">Cambridge IELTS 10</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    Test 1 -->\n  </p>\n  <span class=\"fill-remaining-space\"></span>\n  <nav>\n    <button *ngIf=\"currentPage == 0\" md-raised-button class=\"active\">Listening</button>\n    <button *ngIf=\"currentPage != 0\" md-button class=\"inactive\" routerLink=\"/listening/{{testId}}\">Listening</button>\n\n    <button *ngIf=\"currentPage == 1\" md-raised-button class=\"active\">Reading</button>\n    <button *ngIf=\"currentPage != 1\" md-button class=\"inactive\" routerLink=\"/reading/{{testId}}\">Reading</button>\n\n    <button *ngIf=\"currentPage == 2\" md-raised-button class=\"active\">Writing</button>\n    <button *ngIf=\"currentPage != 2\" md-button class=\"inactive\" routerLink=\"/writing/{{testId}}\">Writing</button>\n\n    <button *ngIf=\"currentPage == 3\" md-raised-button class=\"active\">Speaking</button>\n    <button *ngIf=\"currentPage != 3\" md-button class=\"inactive\" routerLink=\"/speaking/{{testId}}\">Speaking</button>\n  </nav>\n</md-toolbar>"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div class=\"note\">\n  <p *ngIf=\"data.heading\" class=\"heading\">{{data.heading}}</p>\n  <p *ngFor=\"let para of displayParas; let i = 'index'\">\n    <span *ngFor=\"let span of para; let j = 'index'\">\n      <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n        <span md-prefix class=\"margin-right-10\" style=\"font-weight: bold\">{{span.data}}</span>\n        <input mdInput type=\"text\" [(ngModel)]=\"answers[i][j]\" placeholder=\"\"/>\n      </md-input-container>\n      <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n    </span>\n  </p>\n</div>\n\n<!-- <md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n          <b md-prefix class=\"margin-right-10\">{{span.data}} </b>\n          <input mdInput type=\"text\" [(ngModel)]=\"answers[i][j]\" placeholder=\"\"/>\n        </md-input-container>\n        <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card> -->\n"
 
 /***/ }),
 
 /***/ 875:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <table>\n    <tr>\n      <th>Test</th>\n      <th>Skill</th>\n      <th>Score</th>\n      <th>Time</th>\n    </tr>\n    <tr *ngFor=\"let attempt of user.attempts.slice().reverse()\">\n      <td>{{attempt.test_id}}</td>\n      <td>{{attempt.skill}}</td>\n      <td>{{attempt.score}}\n        <a *ngIf=\"attempt.skill === 'writing'\" routerLink=\"/test/{{attempt.test_id}}/writing\">See your answer</a>\n      </td>\n    </tr>\n  </table>\n</div>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<p *ngIf=\"data.heading\" class=\"heading\">{{data.heading}}</p>\n\n<div *ngFor=\"let question of data.questions; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{question.text}}</p>\n  <md-radio-group class=\"radio-group\" [(ngModel)]=\"answers[i]\">\n    <md-radio-button *ngFor=\"let choice of question.choices; let i = 'index'\" [value]=\"i + 1 | letter\">\n      <span class=\"blue margin-right\">{{i+1 | letter | uppercase}}</span>\n      {{choice}}\n    </md-radio-button>\n  </md-radio-group>\n</div>\n"
 
 /***/ }),
 
 /***/ 876:
 /***/ (function(module, exports) {
 
-module.exports = "<img class=\"banner\" src=\"/assets/banner.png\">\n\n<div class=\"over\" [ngStyle]=\"{minHeight: cardWidth}\">\n  <p class=\"header\">Recent Tests</p>\n  <div *ngFor=\"let test of tests\" class=\"card-div\">\n    <md-card class=\"example-card\">\n      <md-card-header>\n        <div md-card-avatar class=\"example-header-image\"></div>\n        <md-card-title>{{test.title}}</md-card-title>\n        <md-card-subtitle>{{test.description}}</md-card-subtitle>\n      </md-card-header>\n      <img md-card-image [src]=\"test.image\" routerLink=\"/listening/{{test.id}}\">\n      <!-- <md-card-actions>\n        <button md-raised-button color=\"primary\" routerLink=\"/listening/{{test.id}}\">TAKE THIS TEST</button>\n      </md-card-actions> -->\n    </md-card>\n  </div>\n</div>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<table class=\"format-table\">\n  <tr *ngFor=\"let row of displayTable\">\n    <td *ngFor=\"let cell of row\">\n      <p *ngFor=\"let para of cell\" class=\"para-in-cell\">\n        <span *ngFor=\"let span of para\">\n          <md-input-container *ngIf=\"span.isInput\" floatingPlaceholder=\"false\">\n            <span md-prefix class=\"margin-right-10\" style=\"font-weight: bold\">{{span.data}}</span>\n            <input mdInput type=\"text\" [(ngModel)]=\"answers[span.data - data.first]\" placeholder=\"\"/>\n          </md-input-container>\n          <span *ngIf=\"!span.isInput\" [innerHTML]=\"span.data\"></span>\n        </span>\n      </p>\n    </td>\n  </tr>\n</table>\n"
 
 /***/ }),
 
 /***/ 877:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list [list]=\"data.endings\"\n                 [answers]=\"answers\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let sen of data.sentences; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{sen}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let ending of data.endings; let j = 'index'\"\n               [value]=\"j + 1\">{{j + 1 | letter | uppercase}}. {{ending}}</md-option>\n  </md-select>\n</div>\n"
+module.exports = "<div class=\"loading overall\" *ngIf=\"isShow === 'true'\">\n  <p class=\"header blue\">Loading...</p>\n  <md-progress-bar color=\"primary\" mode=\"indeterminate\"></md-progress-bar>\n  <!-- <md-progress-bar color=\"primary\" mode=\"indeterminate\"></md-progress-bar>\n  <md-progress-bar color=\"primary\" mode=\"indeterminate\"></md-progress-bar> -->\n</div>\n"
 
 /***/ }),
 
 /***/ 878:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list \n                 [list]=\"data.headings\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let para of data.paras; let j = 'index'\">\n  <p>\n    <span *ngIf=\"para.no\">{{para.no}}. </span>\n    <span *ngIf=\"!para.no\"><i>Example: </i></span>\n    Paragraph <b>{{para.char | uppercase}}</b>\n  </p>\n  <div *ngIf=\"!para.answer\">\n    <md-select [(ngModel)]=\"answers[para.no - data.first]\">\n      <md-option *ngFor=\"let heading of data.headings; let i = 'index'\"\n                 [value]=\"i + 1\">{{i + 1 | roman}}</md-option>\n    </md-select>\n  </div>\n  <div *ngIf=\"para.answer\">\n    <p><i>Answer: </i>{{para.answer | roman}}</p>\n  </div>\n</div>\n"
+module.exports = "<table class=\"format-table\">\n  <tr *ngFor=\"let item of list; let i = 'index'\" [style.color]=\"changeColor(i + 1) ? '#1E88E5' : ''\">\n    <td>\n      <span *ngIf=\"mark == 'letter'\" class=\"blue\">{{i + 1 | letter | uppercase}}</span>\n      <span *ngIf=\"mark == 'roman'\">{{i + 1 | roman}}</span>\n    </td>\n    <td>{{item}}</td>\n  </tr>\n</table>\n"
 
 /***/ }),
 
 /***/ 879:
 /***/ (function(module, exports) {
 
-module.exports = "<p><i>\n  Reading Passage {{sectionNumber}} has {{data.number_of_paras | textNumber}} paragraphs, \n  <b>A-{{data.number_of_paras | letter | uppercase}}</b>.\n</i></p>\n<p>Which paragraph contains the following information?</p>\n<p><i>\n  Write the correct letter, \n  <b>A-{{data.number_of_paras | letter | uppercase}}</b>\n  , in boxes {{data.first}}-{{data.last}} on your answer sheet.\n</i></p>\n<p *ngIf=\"data.nb\"><b>NB</b> You may use any letter more than once.</p>\n\n<div *ngFor=\"let item of data.text; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{item}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let para of paras; let j = 'index'\"\n               [value]=\"para\">Paragraph {{para | uppercase}}</md-option>\n  </md-select>\n</div>"
+module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a href=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <a href=\"/library\">Library</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span *ngIf=\"test\">{{test.description}} - {{test.title}}</span>\n  </p>\n  <span class=\"fill-remaining-space\"></span>\n  <nav>\n    <button *ngIf=\"currentPage == 0\" md-raised-button class=\"active\">Listening</button>\n    <button *ngIf=\"currentPage != 0\" md-button class=\"inactive\" routerLink=\"/listening/{{testId}}\">Listening</button>\n\n    <button *ngIf=\"currentPage == 1\" md-raised-button class=\"active\">Reading</button>\n    <button *ngIf=\"currentPage != 1\" md-button class=\"inactive\" routerLink=\"/reading/{{testId}}\">Reading</button>\n\n    <button *ngIf=\"currentPage == 2\" md-raised-button class=\"active\">Writing</button>\n    <button *ngIf=\"currentPage != 2\" md-button class=\"inactive\" routerLink=\"/writing/{{testId}}\">Writing</button>\n\n    <button *ngIf=\"currentPage == 3\" md-raised-button class=\"active\">Speaking</button>\n    <button *ngIf=\"currentPage != 3\" md-button class=\"inactive\" routerLink=\"/speaking/{{testId}}\">Speaking</button>\n  </nav>\n</md-toolbar>"
 
 /***/ }),
 
 /***/ 880:
 /***/ (function(module, exports) {
 
-module.exports = "<p><i>Complete the sentence<span *ngIf=\"data.first != data.last\">s</span> below.</i></p>\n<p>\n  <i>Choose <b>NO MORE THAN {{data.word_limit | textNumber | uppercase}} WORDS <span *ngIf=\"data.number_limit != 0\">AND/OR {{data.number_limit | textNumber | uppercase}} NUMBER</span></b> from the text for each answer.</i>\n</p>\n<p>\n  <i>\n    Write your answers in boxes {{data.first}}\n    <span *ngIf=\"data.last - data.first == 1\"> and </span>\n    <span *ngIf=\"data.last - data.first > 1\"> - </span>\n    {{data.last}} on your answer sheet.\n  </i>\n</p>\n\n<!-- <div > -->\n  <p *ngFor=\"let sen of displaySens; let i = 'index'\">\n    <span>{{data.first + i}}. </span>\n    <span *ngFor=\"let span of sen\">\n      <md-input-container *ngIf=\"span == '{}'\" floatingPlaceholder=\"false\">\n        <input mdInput type=\"text\" [(ngModel)]=\"answers[i]\" placeholder=\"\"/>\n      </md-input-container>\n      <span *ngIf=\"span != '{}'\">{{span}}</span>\n    </span>\n  </p>\n<!-- </div> -->\n"
+module.exports = "<img class=\"banner\" src=\"/assets/banner.png\">\n\n<div class=\"overall\">\n  <div class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"red\">Recent Tests</p>\n      <button md-button class=\"red\" routerLink=\"/library\">\n        See Library\n        <md-icon class=\"icon\">chevron_right</md-icon>\n      </button>\n    </div>\n    <div *ngFor=\"let test of tests\" class=\"card-div\">\n      <md-card routerLink=\"/listening/{{test.id}}\">\n        <img md-card-image [src]=\"test.image\">\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 881:
 /***/ (function(module, exports) {
 
-module.exports = "<md-slide-toggle [(ngModel)]=\"data.duplicatable\">Duplicatable</md-slide-toggle>\n\n<p><i>Complete the summary using the list of words, \n  <b>A-{{data.words.length | letter | uppercase}}</b>, below.</i></p>\n<p><i>\n  Write your letter, <b>A-{{data.words.length | letter | uppercase}}</b>, in boxes {{data.first}}\n  <span *ngIf=\"data.last - data.first == 1\"> and </span>\n  <span *ngIf=\"data.last - data.first > 1\">-</span>\n  {{data.last}} on your answer sheet.\n</i></p>\n\n<md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <div *ngIf=\"span.isInput\" class=\"inline-flex\">\n          <b>{{span.data}}</b>\n          <md-select [(ngModel)]=\"answers[i][j]\">\n            <md-option *ngFor=\"let word of data.words; let i = 'index'\"\n                       [value]=\"i + 1\">{{i + 1 | letter | uppercase}}. {{word}}</md-option>\n          </md-select>\n        </div>\n        <span *ngIf=\"!span.isInput\">{{span.data}}</span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card>\n\n<app-option-list \n                 [list]=\"data.words\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n"
+module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a href=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span href=\"/library\">Library</span>\n  </p>\n</md-toolbar>\n\n<div class=\"overall\">\n  <div class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"section-header red\">All Tests</p>\n      <!-- <button md-button class=\"red\" routerLink=\"/library\">\n        See Library\n        <md-icon class=\"icon\">chevron_right</md-icon>\n      </button> -->\n    </div>\n    <div *ngFor=\"let test of tests\" class=\"card-div\">\n      <md-card routerLink=\"/listening/{{test.id}}\">\n        <img md-card-image [src]=\"test.image\">\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 882:
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div class=\"options\">\n  <table *ngIf=\"data.options == 'tf'\">\n    <tr>\n      <td><p class=\"option primary-color\">TRUE</p></td>\n      <td><p>if the statement argees with the information</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">FALSE</p></td>\n      <td><p>if the statement contradicts the information</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NOT GIVEN</p></td>\n      <td><p>if there is no information on this</p></td>\n    </tr>\n  </table>\n\n  <table *ngIf=\"data.options == 'yn'\">\n    <tr>\n      <td><p class=\"option primary-color\">YES</p></td>\n      <td><p>if the statement argees with the claims of the writer</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NO</p></td>\n      <td><p>if the statement contradicts the claims of the writer</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NOT GIVEN</p></td>\n      <td><p>if it is impossible to say what the writer thinks about this</p></td>\n    </tr>\n  </table>\n</div>\n\n<div *ngFor=\"let text of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{text}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let item of options\" [value]=\"item\">{{item | uppercase}}</md-option>\n  </md-select>\n</div>\n"
+module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a href=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span href=\"/library\">Result</span>\n  </p>\n</md-toolbar>\n\n<app-loading isShow=\"{{user ? false : true}}\"></app-loading>\n\n<div class=\"overall\" *ngIf=\"user\">\n  <p class=\"section-header red\">Your Results</p>\n  <table *ngIf=\"user.attempts.length != 0\" class=\"format-table\">\n    <tr>\n      <td><b>Test</b></td>\n      <td><b>Skill</b></td>\n      <td><b>Score</b></td>\n      <!-- <td><b>Time</b></td> -->\n    </tr>\n    <tr *ngFor=\"let attempt of user.attempts.slice().reverse()\">\n      <td>{{attempt.test_id}}</td>\n      <td>{{attempt.skill | uppercase}}</td>\n      <td>{{attempt.score}}\n        <a *ngIf=\"attempt.skill === 'writing'\" class=\"blue\" routerLink=\"/writing/{{attempt.test_id}}\">See your answer</a>\n      </td>\n      <!-- <td></td> -->\n    </tr>\n  </table>\n\n  <p *ngIf=\"user.attempts.length == 0\">You haven't done any test yet!</p>\n</div>"
 
 /***/ }),
 
 /***/ 883:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  common works!\n</p>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list [list]=\"data.endings\"\n                 [answers]=\"answers\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let sen of data.sentences; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{sen}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let ending of data.endings; let j = 'index'\"\n               [value]=\"j + 1\">{{j + 1 | letter | uppercase}}. {{ending}}</md-option>\n  </md-select>\n</div>\n"
 
 /***/ }),
 
 /***/ 884:
 /***/ (function(module, exports) {
 
-module.exports = "<md-card>\r\n  <md-card-title class=\"primary-color\">Answer Sheet</md-card-title>\r\n  <md-card-subtitle>{{data.skill | uppercase}}</md-card-subtitle>\r\n  <md-card-content>\r\n    <div *ngIf=\"data.isSubmited\">\r\n      <p class=\"score primary-color\"><span class=\"score-prefix\">Your score is </span>{{testResult.score | number : '1.1-1'}}</p>\r\n      <p class=\"no-of-correct\">Correct answers: {{testResult.noOfCorrect}}/40</p>\r\n    </div>\r\n    <md-dialog-content>\r\n      <table>\r\n        <tr>\r\n          <th>No.</th>\r\n          <th>Your Answer</th>\r\n          <th *ngIf=\"data.isSubmited\">Key</th>\r\n        </tr>\r\n        <tr *ngFor=\"let item of data.answers; let i = 'index'\">\r\n          <td class=\"first-col\">{{item.no}}</td>\r\n          <td class=\"second-col\">\r\n            <span *ngIf=\"!data.isSubmited && item.ans\">{{item.ans}}</span>\r\n            <span *ngIf=\"data.isSubmited && testResult.result\" [ngStyle]=\"{color: testResult.result[i] ? 'green' : 'red'}\">{{item.ans}}</span>\r\n            <!-- <md-icon class=\"icon\"\r\n              color=\"blue\"\r\n              *ngIf=\"isSubmited && testResult.result[i]\">\r\n              info\r\n            </md-icon>\r\n            <md-icon class=\"icon\"\r\n              color=\"red\"\r\n              *ngIf=\"isSubmited && !testResult.result[i]\">\r\n              info\r\n            </md-icon> -->\r\n          </td>\r\n          <td *ngIf=\"data.isSubmited\" class=\"second-col\">\r\n            <span *ngIf=\"data.keys[i]\">\r\n              <span *ngFor=\"let key of data.keys[i].keys; let j = 'index'\">\r\n                <span *ngIf=\"j != 0\"> / </span>\r\n                <span>{{key | uppercase}}</span>\r\n              </span>\r\n            </span>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n    </md-dialog-content>\r\n  </md-card-content>\r\n</md-card>\r\n<md-dialog-actions>\r\n  <button md-raised-button color=\"primary\" *ngIf=\"!data.isSubmited\" (click)=\"submit()\" class=\"submit\">Submit</button>\r\n  <button md-button md-dialog-close>Close</button>\r\n</md-dialog-actions>\r\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<app-option-list \n                 [list]=\"data.headings\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n\n<div *ngFor=\"let para of data.paras; let j = 'index'\">\n  <p>\n    <span *ngIf=\"para.no\">{{para.no}}. </span>\n    <span *ngIf=\"!para.no\"><i>Example: </i></span>\n    Paragraph <b>{{para.char | uppercase}}</b>\n  </p>\n  <div *ngIf=\"!para.answer\">\n    <md-select [(ngModel)]=\"answers[para.no - data.first]\">\n      <md-option *ngFor=\"let heading of data.headings; let i = 'index'\"\n                 [value]=\"i + 1\">{{i + 1 | roman}}</md-option>\n    </md-select>\n  </div>\n  <div *ngIf=\"para.answer\">\n    <p><i>Answer: </i>{{para.answer | roman}}</p>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 885:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"0\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20\">\n  <md-tab *ngFor=\"let section of sections; let i = 'index'\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <div class=\"left-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"right-block\">\n        <md-input-container class=\"margin-bottom-50\">\n          <textarea mdInput placeholder=\"Note\">You can take notes here but remember to transfer your answers to your answer sheet.</textarea>\n        </md-input-container>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>\n"
+module.exports = "<p><i>\n  Reading Passage {{sectionNumber}} has {{data.number_of_paras | textNumber}} paragraphs, \n  <b>A-{{data.number_of_paras | letter | uppercase}}</b>.\n</i></p>\n<p>Which paragraph contains the following information?</p>\n<p><i>\n  Write the correct letter, \n  <b>A-{{data.number_of_paras | letter | uppercase}}</b>\n  , in boxes {{data.first}}-{{data.last}} on your answer sheet.\n</i></p>\n<p *ngIf=\"data.nb\"><b>NB</b> You may use any letter more than once.</p>\n\n<div *ngFor=\"let item of data.text; let i = 'index'\">\n  <p><span *ngIf=\"data.first != data.last\">{{data.first + i}}. </span>{{item}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let para of paras; let j = 'index'\"\n               [value]=\"para\">Paragraph {{para | uppercase}}</md-option>\n  </md-select>\n</div>"
 
 /***/ }),
 
 /***/ 886:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"1\" [testId]=\"testId\"></app-test-toolbar>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timer | timer}}\n</button>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20\">\n  <md-tab *ngFor=\"let section of sections\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <!-- Left-Block -->\n      <div class=\"left-block\">\n        <md-card class=\"left-card\">\n          <md-card-title class=\"blue title\">{{section.passage.heading | uppercase}}</md-card-title>\n          <md-card-subtitle>{{section.passage.sub_heading}}</md-card-subtitle>\n          <md-card-content>\n            <div *ngFor=\"let para of section.passage.paras\">\n              <p style=\"position:relative;\">\n                <b style=\"position:absolute;left:-15px\">{{para.mark | uppercase}}</b>\n                {{para.content}}\n              </p>\n            </div>\n          </md-card-content>\n        </md-card>\n      </div>\n      <!-- /Left-Block -->\n      \n      <!-- Right-Block -->\n      <div class=\"right-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n\n          <div *ngIf=\"question.type == 'true-false'\">\n            <app-true-false [data]=\"question\"></app-true-false>\n          </div>\n          <div *ngIf=\"question.type == 'heading'\">\n            <app-heading [data]=\"question\"></app-heading>\n          </div>\n          <div *ngIf=\"question.type == 'summary-select'\">\n            <app-summary-select [data]=\"question\"></app-summary-select>\n          </div>\n          <div *ngIf=\"question.type == 'sentence'\">\n            <app-sentence [data]=\"question\"></app-sentence>\n          </div>\n          <div *ngIf=\"question.type == 'ending'\">\n            <app-ending [data]=\"question\"></app-ending>\n          </div>\n          <div *ngIf=\"question.type == 'information'\">\n            <app-information [data]=\"question\"\n              [sectionNumber]=\"section.section_number\"></app-information>\n          </div>\n        </div>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n      <!-- /Right-Block -->\n\n    </div>\n  </md-tab>\n</md-tab-group>\n"
+module.exports = "<p><i>Complete the sentence<span *ngIf=\"data.first != data.last\">s</span> below.</i></p>\n<p>\n  <i>Choose <b>NO MORE THAN {{data.word_limit | textNumber | uppercase}} WORDS <span *ngIf=\"data.number_limit != 0\">AND/OR {{data.number_limit | textNumber | uppercase}} NUMBER</span></b> from the text for each answer.</i>\n</p>\n<p>\n  <i>\n    Write your answers in boxes {{data.first}}\n    <span *ngIf=\"data.last - data.first == 1\"> and </span>\n    <span *ngIf=\"data.last - data.first > 1\"> - </span>\n    {{data.last}} on your answer sheet.\n  </i>\n</p>\n\n<!-- <div > -->\n  <p *ngFor=\"let sen of displaySens; let i = 'index'\">\n    <span>{{data.first + i}}. </span>\n    <span *ngFor=\"let span of sen\">\n      <md-input-container *ngIf=\"span == '{}'\" floatingPlaceholder=\"false\">\n        <input mdInput type=\"text\" [(ngModel)]=\"answers[i]\" placeholder=\"\"/>\n      </md-input-container>\n      <span *ngIf=\"span != '{}'\">{{span}}</span>\n    </span>\n  </p>\n<!-- </div> -->\n"
 
 /***/ }),
 
 /***/ 887:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"3\" [testId]=\"testId\"></app-test-toolbar>\n\n<div class=\"padding-20\" *ngIf=\"data\">\n  <md-card>\n    <md-card-title class=\"primary-color center\">Part 1</md-card-title>\n    <md-card-subtitle>The examiner asks the candidate about him/herself, his/her home, work or studies and other familier topics.</md-card-subtitle>\n    <md-card-content>\n      <div *ngFor=\"let topic of data.part_1.topics\">\n        <p class=\"topic primary-color\">{{topic.title}}</p>\n        <ul>\n          <li *ngFor=\"let question of topic.questions\">{{question}}</li>\n        </ul>\n      </div>\n    </md-card-content>\n  </md-card>\n\n  <div class=\"space-20\"></div>\n\n  <md-card>\n    <md-card-title class=\"primary-color center\">Part 2</md-card-title>\n    <md-card-subtitle>\n      \n    </md-card-subtitle>\n    <md-card-content>\n      <p>You will have to talk about the topic for one to two minutes.</p>\n      <p>You have one minute to think about what you are going to say.</p>\n      <p>You can make some notes to help you if you wish.</p>\n      <div class=\"box\">\n        <p>{{data.part_2.question}}</p>\n        <p>You should say</p>\n        <ul>\n          <li *ngFor=\"let clue of data.part_2.clues\">{{clue}}</li>\n        </ul>\n        <p>{{data.part_2.final_clue}}</p>\n      </div>\n    </md-card-content>\n  </md-card>\n\n  <div class=\"space-20\"></div>\n\n  <md-card>\n    <md-card-title class=\"primary-color center\">Part 3</md-card-title>\n    <md-card-subtitle>Discussion topics</md-card-subtitle>\n    <md-card-content>\n      <!-- <p>Discussion topics:</p> -->\n      <div *ngFor=\"let topic of data.part_3.topics\">\n        <p class=\"topic primary-color\">{{topic.title}}</p>\n        <i>Example questions:</i>\n        <p *ngFor=\"let question of topic.questions\">{{question}}</p>\n      </div>\n    </md-card-content>\n  </md-card>\n</div>\n"
+module.exports = "<md-slide-toggle [(ngModel)]=\"data.duplicatable\">Duplicatable</md-slide-toggle>\n\n<p><i>Complete the summary using the list of words, \n  <b>A-{{data.words.length | letter | uppercase}}</b>, below.</i></p>\n<p><i>\n  Write your letter, <b>A-{{data.words.length | letter | uppercase}}</b>, in boxes {{data.first}}\n  <span *ngIf=\"data.last - data.first == 1\"> and </span>\n  <span *ngIf=\"data.last - data.first > 1\">-</span>\n  {{data.last}} on your answer sheet.\n</i></p>\n\n<md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <div *ngIf=\"span.isInput\" class=\"inline-flex\">\n          <b>{{span.data}}</b>\n          <md-select [(ngModel)]=\"answers[i][j]\">\n            <md-option *ngFor=\"let word of data.words; let i = 'index'\"\n                       [value]=\"i + 1\">{{i + 1 | letter | uppercase}}. {{word}}</md-option>\n          </md-select>\n        </div>\n        <span *ngIf=\"!span.isInput\">{{span.data}}</span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card>\n\n<app-option-list \n                 [list]=\"data.words\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n"
 
 /***/ }),
 
 /***/ 888:
 /***/ (function(module, exports) {
 
-module.exports = "<app-test-toolbar currentPage=\"2\" [testId]=\"testId\"></app-test-toolbar>\n\n<div class=\"padding-20\" *ngIf=\"data\">\n  <div class=\"left-block\">\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 1</md-card-title>\n      <md-card-subtitle>You should spend about 20 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_1.text\">{{text}}</p></td></tr></table>\n        <p>Write at least 150 words.</p>\n        <div class=\"space-20\"></div>\n        <img src=\"http://content.ieltsonlinetests.com/fileman/Uploads/Images/ielts/practice%203/percentage-of-water-used-for-different-purposes.png\">\n      </md-card-content>\n    </md-card>\n\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 2</md-card-title>\n      <md-card-subtitle>You should spend about 40 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <p>Write about the following topic:</p>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_2.text\">{{text}}</p></td></tr></table>\n        <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>\n        <p>Write at least 250 words.</p>\n      </md-card-content>\n    </md-card>\n  </div>\n\n  <div class=\"right-block\">\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task1\" placeholder=\"Task 1\"></textarea>\n    </md-input-container>\n\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task2\" placeholder=\"Task 2\"></textarea>\n    </md-input-container>\n\n    <div class=\"action-block margin-bottom-20\">\n      <button md-raised-button (click)=\"submit()\" [disabled]=\"isDisabled()\" color=\"primary\">\n        <span *ngIf=\"!isDisabled() || !isSubmitted\">Submit</span>\n        <span *ngIf=\"isSubmitted && isDisabled()\">Submitted</span>\n      </button>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<div class=\"options\">\n  <table *ngIf=\"data.options == 'tf'\">\n    <tr>\n      <td><p class=\"option primary-color\">TRUE</p></td>\n      <td><p>if the statement argees with the information</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">FALSE</p></td>\n      <td><p>if the statement contradicts the information</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NOT GIVEN</p></td>\n      <td><p>if there is no information on this</p></td>\n    </tr>\n  </table>\n\n  <table *ngIf=\"data.options == 'yn'\">\n    <tr>\n      <td><p class=\"option primary-color\">YES</p></td>\n      <td><p>if the statement argees with the claims of the writer</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NO</p></td>\n      <td><p>if the statement contradicts the claims of the writer</p></td>\n    </tr>\n    <tr>\n      <td><p class=\"option primary-color\">NOT GIVEN</p></td>\n      <td><p>if it is impossible to say what the writer thinks about this</p></td>\n    </tr>\n  </table>\n</div>\n\n<div *ngFor=\"let text of data.text; let i = 'index'\">\n  <p><span>{{data.first + i}}. </span>{{text}}</p>\n  <md-select [(ngModel)]=\"answers[i]\">\n    <md-option *ngFor=\"let item of options\" [value]=\"item\">{{item | uppercase}}</md-option>\n  </md-select>\n</div>\n"
 
 /***/ }),
 
-/***/ 932:
+/***/ 889:
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  common works!\n</p>\n"
+
+/***/ }),
+
+/***/ 890:
+/***/ (function(module, exports) {
+
+module.exports = "<md-card>\r\n  <md-card-title class=\"primary-color\">Answer Sheet</md-card-title>\r\n  <md-card-subtitle>{{data.skill | uppercase}}</md-card-subtitle>\r\n  <md-card-content>\r\n    <div *ngIf=\"data.isSubmited\">\r\n      <p class=\"score primary-color\"><span class=\"score-prefix\">Your score is </span>{{testResult.score | number : '1.1-1'}}</p>\r\n      <p class=\"no-of-correct\">Correct answers: {{testResult.noOfCorrect}}/40</p>\r\n    </div>\r\n    <md-dialog-content>\r\n      <table class=\"format-table\">\r\n        <tr>\r\n          <th>No.</th>\r\n          <th>Your Answer</th>\r\n          <th *ngIf=\"data.isSubmited\">Key</th>\r\n        </tr>\r\n        <tr *ngFor=\"let item of data.answers; let i = 'index'\">\r\n          <td class=\"first-col\">{{item.no}}</td>\r\n          <td class=\"second-col\">\r\n            <span *ngIf=\"!data.isSubmited && item.ans\">{{item.ans}}</span>\r\n            <span *ngIf=\"data.isSubmited && testResult.result\" [ngStyle]=\"{color: testResult.result[i] ? 'green' : 'red'}\">{{item.ans}}</span>\r\n          </td>\r\n          <td *ngIf=\"data.isSubmited\" class=\"second-col\">\r\n            <span *ngIf=\"data.keys[i]\">\r\n              <span *ngFor=\"let key of data.keys[i].keys; let j = 'index'\">\r\n                <span *ngIf=\"j != 0\"> / </span>\r\n                <span>{{key | uppercase}}</span>\r\n              </span>\r\n            </span>\r\n          </td>\r\n        </tr>\r\n      </table>\r\n    </md-dialog-content>\r\n  </md-card-content>\r\n</md-card>\r\n<md-dialog-actions>\r\n  <button md-raised-button color=\"primary\" *ngIf=\"!data.isSubmited\" (click)=\"submit()\" class=\"submit\">Submit</button>\r\n  <button md-button md-dialog-close>Close</button>\r\n</md-dialog-actions>\r\n"
+
+/***/ }),
+
+/***/ 891:
+/***/ (function(module, exports) {
+
+module.exports = "<app-test-toolbar currentPage=\"0\" [testId]=\"testId\"></app-test-toolbar>\n<app-loading isShow=\"{{sections ? false : true}}\"></app-loading>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20 overall\">\n  <md-tab *ngFor=\"let section of sections; let i = 'index'\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <div class=\"left-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"right-block\">\n        <md-input-container class=\"margin-bottom-50\">\n          <textarea mdInput placeholder=\"Note\">You can take notes here but remember to transfer your answers to your answer sheet.</textarea>\n        </md-input-container>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timeLeft | timer}}\n</button>\n"
+
+/***/ }),
+
+/***/ 892:
+/***/ (function(module, exports) {
+
+module.exports = "<app-test-toolbar currentPage=\"1\" [testId]=\"testId\"></app-test-toolbar>\n<app-loading isShow=\"{{sections ? false : true}}\"></app-loading>\n\n<md-tab-group *ngIf=\"sections\" class=\"margin-bottom-20 overall\">\n  <md-tab *ngFor=\"let section of sections\" label=\"Section {{section.section_number}}\">\n    <div class=\"padding-20\">\n      \n      <!-- Left-Block -->\n      <div class=\"left-block\">\n        <md-card class=\"left-card\">\n          <md-card-title class=\"blue title\">{{section.passage.heading | uppercase}}</md-card-title>\n          <md-card-subtitle>{{section.passage.sub_heading}}</md-card-subtitle>\n          <md-card-content>\n            <div *ngFor=\"let para of section.passage.paras\">\n              <p style=\"position:relative;\">\n                <b style=\"position:absolute;left:-15px\">{{para.mark | uppercase}}</b>\n                {{para.content}}\n              </p>\n            </div>\n          </md-card-content>\n        </md-card>\n      </div>\n      <!-- /Left-Block -->\n      \n      <!-- Right-Block -->\n      <div class=\"right-block\">\n        <!-- Block for each set of questions -->\n        <div *ngFor=\"let question of section.sub_sections\" class=\"margin-bottom-20\">\n          <div class=\"question-block blue\">\n            <p *ngIf=\"question.first == question.last\">Question {{question.first}}</p>\n            <p *ngIf=\"question.first != question.last\">\n              <span>Questions {{question.first}}</span>\n              <span *ngIf=\"question.last - question.first == 1\"> and </span>\n              <span *ngIf=\"question.last - question.first > 1\">-</span>\n              <span>{{question.last}}</span>\n            </p>  \n          </div>\n          \n          <div *ngIf=\"question.type == 'answer'\">\n            <app-answer [data]=\"question\"></app-answer>\n          </div>\n          <div *ngIf=\"question.type == 'feature'\">\n            <app-feature [data]=\"question\"></app-feature>\n          </div>\n          <div *ngIf=\"question.type == 'multiple'\">\n            <app-multiple [data]=\"question\"></app-multiple>\n          </div>\n          <div *ngIf=\"question.type == 'note'\">\n            <app-note [data]=\"question\"></app-note>\n          </div>\n          <div *ngIf=\"question.type == 'single'\">\n            <app-single [data]=\"question\"></app-single>\n          </div>\n          <div *ngIf=\"question.type == 'table'\">\n            <app-table [data]=\"question\"></app-table>\n          </div>\n\n          <div *ngIf=\"question.type == 'true-false'\">\n            <app-true-false [data]=\"question\"></app-true-false>\n          </div>\n          <div *ngIf=\"question.type == 'heading'\">\n            <app-heading [data]=\"question\"></app-heading>\n          </div>\n          <div *ngIf=\"question.type == 'summary-select'\">\n            <app-summary-select [data]=\"question\"></app-summary-select>\n          </div>\n          <div *ngIf=\"question.type == 'sentence'\">\n            <app-sentence [data]=\"question\"></app-sentence>\n          </div>\n          <div *ngIf=\"question.type == 'ending'\">\n            <app-ending [data]=\"question\"></app-ending>\n          </div>\n          <div *ngIf=\"question.type == 'information'\">\n            <app-information [data]=\"question\"\n              [sectionNumber]=\"section.section_number\"></app-information>\n          </div>\n        </div>\n\n        <div class=\"action-block\">\n          <button md-raised-button color=\"primary\" (click)=\"viewSheet(isSubmited)\">\n            <span *ngIf=\"!isSubmited\">View Answer Sheet & Submit</span>\n            <span *ngIf=\"isSubmited\">Review</span>\n          </button>\n        </div>\n      </div>\n      <!-- /Right-Block -->\n\n    </div>\n  </md-tab>\n</md-tab-group>\n\n<button class=\"timer\" md-raised-button>\n  <md-icon class=\"icon\">alarm</md-icon>\n  {{timeLeft | timer}}\n</button>\n"
+
+/***/ }),
+
+/***/ 893:
+/***/ (function(module, exports) {
+
+module.exports = "<app-test-toolbar currentPage=\"3\" [testId]=\"testId\"></app-test-toolbar>\n<app-loading isShow=\"{{data ? false : true}}\"></app-loading>\n\n<div class=\"padding-20 overall\" *ngIf=\"data\">\n  <md-card class=\"left-card\">\n    <md-card-title class=\"primary-color center\">Part 1</md-card-title>\n    <md-card-subtitle>The examiner asks the candidate about him/herself, his/her home, work or studies and other familier topics.</md-card-subtitle>\n    <md-card-content>\n      <div *ngFor=\"let topic of data.part_1.topics\">\n        <p class=\"topic primary-color\">{{topic.title}}</p>\n        <ul>\n          <li *ngFor=\"let question of topic.questions\">{{question}}</li>\n        </ul>\n      </div>\n    </md-card-content>\n  </md-card>\n\n  <md-card class=\"left-card\">\n    <md-card-title class=\"primary-color center\">Part 2</md-card-title>\n    <md-card-subtitle></md-card-subtitle>\n    <md-card-content>\n      <p>You will have to talk about the topic for one to two minutes.</p>\n      <p>You have one minute to think about what you are going to say.</p>\n      <p>You can make some notes to help you if you wish.</p>\n      <div class=\"box\">\n        <p>{{data.part_2.question}}</p>\n        <p>You should say</p>\n        <ul>\n          <li *ngFor=\"let clue of data.part_2.clues\">{{clue}}</li>\n        </ul>\n        <p>{{data.part_2.final_clue}}</p>\n      </div>\n    </md-card-content>\n  </md-card>\n\n  <md-card class=\"left-card\">\n    <md-card-title class=\"primary-color center\">Part 3</md-card-title>\n    <md-card-subtitle>Discussion topics</md-card-subtitle>\n    <md-card-content>\n      <!-- <p>Discussion topics:</p> -->\n      <div *ngFor=\"let topic of data.part_3.topics\">\n        <p class=\"topic primary-color\">{{topic.title}}</p>\n        <i>Example questions:</i>\n        <p *ngFor=\"let question of topic.questions\">{{question}}</p>\n      </div>\n    </md-card-content>\n  </md-card>\n</div>\n"
+
+/***/ }),
+
+/***/ 894:
+/***/ (function(module, exports) {
+
+module.exports = "<app-test-toolbar currentPage=\"2\" [testId]=\"testId\"></app-test-toolbar>\n<app-loading isShow=\"{{data ? false : true}}\"></app-loading>\n\n<div class=\"padding-20 overall\">\n  <div class=\"left-block\" *ngIf=\"data\">\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 1</md-card-title>\n      <md-card-subtitle>You should spend about 20 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_1.text\">{{text}}</p></td></tr></table>\n        <p>Write at least 150 words.</p>\n        <div class=\"space-20\"></div>\n        <img src=\"http://content.ieltsonlinetests.com/fileman/Uploads/Images/ielts/practice%203/percentage-of-water-used-for-different-purposes.png\">\n      </md-card-content>\n    </md-card>\n\n    <md-card class=\"left-card\">\n      <md-card-title class=\"primary-color center\">Writing Task 2</md-card-title>\n      <md-card-subtitle>You should spend about 40 minutes on this task.</md-card-subtitle>\n      <md-card-content>\n        <p>Write about the following topic:</p>\n        <table class=\"format-table\"><tr><td><p *ngFor=\"let text of data.task_2.text\">{{text}}</p></td></tr></table>\n        <p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p>\n        <p>Write at least 250 words.</p>\n      </md-card-content>\n    </md-card>\n  </div>\n\n  <div class=\"right-block\">\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task1\" placeholder=\"Task 1\"></textarea>\n    </md-input-container>\n\n    <md-input-container class=\"margin-bottom-50\">\n      <textarea mdInput [(ngModel)]=\"task2\" placeholder=\"Task 2\"></textarea>\n    </md-input-container>\n\n    <div class=\"action-block margin-bottom-20\">\n      <button md-raised-button (click)=\"submit()\" [disabled]=\"isDisabled()\" color=\"primary\">\n        <span *ngIf=\"!isDisabled() || !isSubmitted\">Submit</span>\n        <span *ngIf=\"isSubmitted && isDisabled()\">Submitted</span>\n      </button>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 938:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(524);
+module.exports = __webpack_require__(525);
 
 
 /***/ }),
@@ -3449,5 +3598,5 @@ var GlobalService = (function () {
 
 /***/ })
 
-},[932]);
+},[938]);
 //# sourceMappingURL=main.bundle.js.map
