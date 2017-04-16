@@ -340,7 +340,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-block, .right-block {\r\n  height: 600px;\r\n  width: 49%;\r\n  overflow: scroll;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar { \r\n  display: none; \r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n  margin-bottom: 20px;\r\n  font-family: 'Poppins', sans-serif;\r\n}\r\n\r\n.question-block {\r\n  /*box-sizing: border-box;*/\r\n  border: 1px solid #EEEEEE;\r\n  /*padding: 5px;*/\r\n  /*display: inline-block;*/\r\n  display: block;\r\n  border-width: 0 0 2px 0;\r\n\r\n}\r\n\r\n.question-block > p {\r\n  display: inline-block;\r\n  position: relative;\r\n  top: 1px;\r\n  margin: 0px;\r\n  padding: 5px;\r\n  font-size: larger;\r\n  border: 2px solid #1E88E5;\r\n  border-width: 0 0 1px 0;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n  cursor: default;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
+exports.push([module.i, ".left-block {\r\n  float: left;\r\n}\r\n\r\n.right-block {\r\n  float: right;\r\n}\r\n\r\n.left-block, .right-block {\r\n  height: 600px;\r\n  width: 49%;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.left-block::-webkit-scrollbar, .right-block::-webkit-scrollbar {\r\n  width: 0.5em;\r\n}\r\n \r\n.left-block::-webkit-scrollbar-thumb, .right-block::-webkit-scrollbar-thumb {\r\n  background-color: rgba(128, 222, 234, 0.5);\r\n  outline: 1px solid slategrey;\r\n}\r\n\r\n.left-card {\r\n  margin: 3px;\r\n  margin-bottom: 20px;\r\n  font-family: 'Poppins', sans-serif;\r\n}\r\n\r\n.question-block {\r\n  /*box-sizing: border-box;*/\r\n  border: 1px solid #EEEEEE;\r\n  /*padding: 5px;*/\r\n  /*display: inline-block;*/\r\n  display: block;\r\n  border-width: 0 0 2px 0;\r\n\r\n}\r\n\r\n.question-block > p {\r\n  display: inline-block;\r\n  position: relative;\r\n  top: 1px;\r\n  margin: 0px;\r\n  padding: 5px;\r\n  font-size: larger;\r\n  border: 2px solid #1E88E5;\r\n  border-width: 0 0 1px 0;\r\n}\r\n\r\n.action-block {\r\n  text-align: end;\r\n}\r\n\r\n.timer {\r\n  z-index: 2;\r\n  position: fixed;\r\n  bottom: 25px;\r\n  right: 25px;\r\n  cursor: default;\r\n}\r\n\r\n.timer:hover {\r\n  opacity: 0.5;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1149,11 +1149,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var LibraryComponent = (function () {
     function LibraryComponent(testSv) {
         this.testSv = testSv;
+        this.books = [];
+        this.titles = [];
     }
     LibraryComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.testSv.find().then(function (result) {
-            _this.tests = result;
+            for (var i = 0; i < result.length; i++) {
+                if (_this.titles.indexOf(result[i].description) < 0) {
+                    _this.titles.push(result[i].description);
+                }
+            }
+            for (var i = 0; i < _this.titles.length; i++) {
+                _this.books[i] = [];
+            }
+            for (var i = 0; i < result.length; i++) {
+                var index = _this.titles.indexOf(result[i].description);
+                _this.books[index].push(result[i]);
+            }
         });
     };
     LibraryComponent = __decorate([
@@ -2274,6 +2287,14 @@ var TestToolbarComponent = (function () {
     TestToolbarComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.testSv.findOne(this.testId).then(function (value) { return _this.test = value; }, function (reason) { return console.error(reason); });
+        if (this.currentPage == 0)
+            this.skill = 'Listening';
+        if (this.currentPage == 1)
+            this.skill = 'Reading';
+        if (this.currentPage == 2)
+            this.skill = 'Writing';
+        if (this.currentPage == 3)
+            this.skill = 'Speaking';
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
@@ -2549,6 +2570,7 @@ var Type = (function () {
     }
     Type.prototype.ngOnInit = function () { };
     Type.prototype.getFirst = function () {
+        console.log('a');
         return this.data.first;
     };
     Type.prototype.getLast = function () {
@@ -2589,7 +2611,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".spacer {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n#copy {\r\n  font-size: small;\r\n}\r\n\r\n.fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n.nav-bar > button {\r\n  /*border: solid #e41937;\r\n  border-width: 0px 0px;\r\n  border-radius: 0;*/\r\n  height: 100%;\r\n  color: #e41937;\r\n}\r\n\r\n.nav-bar {\r\n  height: 100%;\r\n}\r\n\r\n.logo {\r\n  height: 100%;\r\n}\r\n\r\n.logo-a {\r\n  height: 50%;\r\n}\r\n\r\n.avatar {\r\n  height: 75%;\r\n  border-radius: 70%;\r\n}\r\n\r\nmd-toolbar {\r\n  height: 64px;\r\n  /*background: #EEEEEE;*/\r\n  background: white;\r\n}\r\n\r\n.header-toolbar {\r\n  border-bottom: 1px solid #e41937;\r\n  /*position: fixed;\r\n  top: 0px;\r\n  left: 0px;*/\r\n}\r\n", ""]);
+exports.push([module.i, ".spacer {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n#copy {\r\n  font-size: small;\r\n}\r\n\r\n.fill-remaining-space {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n.nav-bar {\r\n  height: 100%;\r\n}\r\n\r\n.nav-bar > button {\r\n  /*border: solid #e41937;\r\n  border-width: 0px 0px;\r\n  border-radius: 0;*/\r\n  height: 100%;\r\n  color: #e41937;\r\n}\r\n\r\n.logo {\r\n  height: 100%;\r\n}\r\n\r\n.logo-a {\r\n  height: 50%;\r\n  margin-right: 16px;\r\n}\r\n\r\n.avatar {\r\n  height: 75%;\r\n  border-radius: 70%;\r\n}\r\n\r\nmd-toolbar {\r\n  height: 64px;\r\n  /*background: #EEEEEE;*/\r\n  background: white;\r\n}\r\n\r\n.header-toolbar {\r\n  border-bottom: 1px solid #e41937;\r\n  /*position: fixed;\r\n  top: 0px;\r\n  left: 0px;*/\r\n}\r\n", ""]);
 
 // exports
 
@@ -2787,7 +2809,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n  border-left: 7px solid #cb253e;\r\n}\r\n\r\n.card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
+exports.push([module.i, ".banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.section > .card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.section > .card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n  border-left: 7px solid #bdbdbd;\r\n}\r\n\r\n.section > .card-div > md-card:hover {\r\n  border-color: #cb253e;\r\n}\r\n\r\n.section > .card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .card-div > md-card > .card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.section > .card-div > md-card > .card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -2805,7 +2827,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, "/* Content */\r\n\r\n.banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.card-div {\r\n  float: left;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n  border-left: 7px solid #cb253e;\r\n}\r\n\r\n.card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
+exports.push([module.i, ".banner {\r\n  width: 100%;\r\n}\r\n\r\n.overall {\r\n  padding: 10px 75px 20px 75px;\r\n}\r\n\r\n.section {\r\n  /*display: grid;*/\r\n}\r\n\r\n.section > .header-bar > p {\r\n  display: inline-block;\r\n  margin-left: 10px;\r\n  font-size: x-large;\r\n}\r\n\r\n.section > .header-bar > button {\r\n  float: right;\r\n  margin: 20px 0px;\r\n}\r\n\r\n.section > .card-div {\r\n  /*float: left;*/\r\n  display: inline-block;\r\n  padding: 10px;\r\n  box-sizing: border-box;\r\n  width: 24%;\r\n}\r\n\r\n.section > .card-div > md-card {\r\n  border-radius: 0px;\r\n  padding: 10px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  cursor: pointer;\r\n  border-left: 7px solid #bdbdbd;\r\n}\r\n\r\n.section > .card-div > md-card:hover {\r\n  border-color: #cb253e;\r\n}\r\n\r\n.section > .card-div > md-card > img {\r\n  width: calc(100% + 20px);\r\n  margin: -10px -10px 0px;\r\n}\r\n\r\n.section > .card-div > md-card > .card-des > .test-title {\r\n  font-size: x-large;\r\n  margin: 15px 0px 4px 10px;\r\n}\r\n\r\n.section > .card-div > md-card > .card-des > .test-des {\r\n  margin: 0px 0px 9px 10px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -3016,7 +3038,7 @@ module.exports = module.exports.toString();
 /***/ 870:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <md-toolbar></md-toolbar> -->\n\n<md-toolbar class=\"header-toolbar\">\n  <a class=\"logo-a\" href=\"/\"><img class=\"logo\" src=\"/assets/logo.png\"></a>\n  <span class=\"fill-remaining-space\"></span>\n  <nav class=\"nav-bar\">\n    <button md-button routerLink=\"/library\">Library</button>\n    <button md-button *ngIf=\"user\" routerLink=\"/result\">Result</button>\n    <button md-button *ngIf=\"!user\" (click)=\"fbLogin()\">Login</button>\n    <button md-button *ngIf=\"user\" (click)=\"fbLogout()\">Logout</button>\n    <button md-button *ngIf=\"user\">\n      <span>{{user.first_name}}</span>\n      <img class=\"avatar\" [src]=\"user.picture.data.url\">\n      <!-- <md-icon class=\"icon\">arrow_drop_down</md-icon> -->\n    </button>\n  </nav>\n</md-toolbar>\n\n<router-outlet></router-outlet>\n\n<md-toolbar>\n  <span id=\"copy\">&copy;2017 - IELTS Online</span>\n  <span class=\"spacer\"></span>\n</md-toolbar>\n"
+module.exports = "<!-- <md-toolbar></md-toolbar> -->\n\n<md-toolbar class=\"header-toolbar\">\n  <a class=\"logo-a\" href=\"/\"><img class=\"logo\" src=\"/assets/logo.png\"></a>\n  <nav class=\"nav-bar\">\n    <button md-button routerLink=\"/library\">Library</button>\n  </nav>\n  <span class=\"fill-remaining-space\"></span>\n  <nav class=\"nav-bar\">\n    <button md-button *ngIf=\"user\" routerLink=\"/result\">Result</button>\n    <button md-button *ngIf=\"!user\" (click)=\"fbLogin()\">Login</button>\n    <button md-button *ngIf=\"user\" (click)=\"fbLogout()\">Logout</button>\n    <button md-button *ngIf=\"user\">\n      <span>{{user.first_name}}</span>\n      <img class=\"avatar\" [src]=\"user.picture.data.url\">\n      <!-- <md-icon class=\"icon\">arrow_drop_down</md-icon> -->\n    </button>\n  </nav>\n</md-toolbar>\n\n<router-outlet></router-outlet>\n\n<md-toolbar>\n  <span id=\"copy\">&copy;2017 - IELTS Online</span>\n  <span class=\"spacer\"></span>\n</md-toolbar>\n"
 
 /***/ }),
 
@@ -3086,21 +3108,21 @@ module.exports = "<table class=\"format-table\">\n  <tr *ngFor=\"let item of lis
 /***/ 880:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a routerLink=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <a routerLink=\"/library\">Library</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span *ngIf=\"test\">{{test.description}} - {{test.title}}</span>\n  </p>\n  <span class=\"fill-remaining-space\"></span>\n  <nav>\n    <button *ngIf=\"currentPage == 0\" md-raised-button class=\"active\">Listening</button>\n    <button *ngIf=\"currentPage != 0\" md-button class=\"inactive\" routerLink=\"/listening/{{testId}}\">Listening</button>\n\n    <button *ngIf=\"currentPage == 1\" md-raised-button class=\"active\">Reading</button>\n    <button *ngIf=\"currentPage != 1\" md-button class=\"inactive\" routerLink=\"/reading/{{testId}}\">Reading</button>\n\n    <button *ngIf=\"currentPage == 2\" md-raised-button class=\"active\">Writing</button>\n    <button *ngIf=\"currentPage != 2\" md-button class=\"inactive\" routerLink=\"/writing/{{testId}}\">Writing</button>\n\n    <button *ngIf=\"currentPage == 3\" md-raised-button class=\"active\">Speaking</button>\n    <button *ngIf=\"currentPage != 3\" md-button class=\"inactive\" routerLink=\"/speaking/{{testId}}\">Speaking</button>\n  </nav>\n</md-toolbar>"
+module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a routerLink=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <a routerLink=\"/library\">Library</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span *ngIf=\"test\">{{test.description}} - {{test.title}}</span>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span>{{skill}}</span>\n  </p>\n  <span class=\"fill-remaining-space\"></span>\n  <nav>\n    <button *ngIf=\"currentPage == 0\" md-raised-button class=\"active\">Listening</button>\n    <button *ngIf=\"currentPage != 0\" md-button class=\"inactive\" routerLink=\"/listening/{{testId}}\">Listening</button>\n\n    <button *ngIf=\"currentPage == 1\" md-raised-button class=\"active\">Reading</button>\n    <button *ngIf=\"currentPage != 1\" md-button class=\"inactive\" routerLink=\"/reading/{{testId}}\">Reading</button>\n\n    <button *ngIf=\"currentPage == 2\" md-raised-button class=\"active\">Writing</button>\n    <button *ngIf=\"currentPage != 2\" md-button class=\"inactive\" routerLink=\"/writing/{{testId}}\">Writing</button>\n\n    <button *ngIf=\"currentPage == 3\" md-raised-button class=\"active\">Speaking</button>\n    <button *ngIf=\"currentPage != 3\" md-button class=\"inactive\" routerLink=\"/speaking/{{testId}}\">Speaking</button>\n  </nav>\n</md-toolbar>"
 
 /***/ }),
 
 /***/ 881:
 /***/ (function(module, exports) {
 
-module.exports = "<img class=\"banner\" src=\"/assets/banner.png\">\n\n<div class=\"overall\">\n  <div class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"red\">Recent Tests</p>\n      <button md-button class=\"red\" routerLink=\"/library\">\n        See Library\n        <md-icon class=\"icon\">chevron_right</md-icon>\n      </button>\n    </div>\n    <div *ngFor=\"let test of tests\" class=\"card-div\">\n      <md-card routerLink=\"/listening/{{test.id}}\">\n        <!-- <img md-card-image [src]=\"test.image\"> -->\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<img class=\"banner\" src=\"/assets/banner.png\">\n\n<div class=\"overall\">\n  <div class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"red\">Recent Tests</p>\n      <button md-button class=\"red\" routerLink=\"/library\">\n        See Library\n        <md-icon class=\"icon\">chevron_right</md-icon>\n      </button>\n    </div>\n    <div *ngFor=\"let test of tests; let i = 'index'\" class=\"card-div\">\n      <md-card *ngIf=\"i < 8\" routerLink=\"/listening/{{test.id}}\">\n        <!-- <img md-card-image [src]=\"test.image\"> -->\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n\n  <!-- <div class=\"section\">\n    <div class=\"header-bar\"></div>\n    <div class=\"card-div\"></div>\n  </div> -->\n</div>\n"
 
 /***/ }),
 
 /***/ 882:
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a href=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span href=\"/library\">Library</span>\n  </p>\n</md-toolbar>\n\n<div class=\"overall\">\n  <div class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"section-header red\">All Tests</p>\n      <!-- <button md-button class=\"red\" routerLink=\"/library\">\n        See Library\n        <md-icon class=\"icon\">chevron_right</md-icon>\n      </button> -->\n    </div>\n    <div *ngFor=\"let test of tests\" class=\"card-div\">\n      <md-card routerLink=\"/listening/{{test.id}}\">\n        <!-- <img md-card-image [src]=\"test.image\"> -->\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<md-toolbar class=\"breadcrumb\">\n  <p>\n    <a href=\"/\">Home</a>\n    <md-icon class=\"icon\">chevron_right</md-icon>\n    <span href=\"/library\">Library</span>\n  </p>\n</md-toolbar>\n\n<div class=\"overall\">\n  <div *ngFor=\"let book of books\" class=\"section\">\n    <div class=\"header-bar\">\n      <p class=\"red\">{{book[0].description}}</p>\n    </div>\n    <div *ngFor=\"let test of book\" class=\"card-div\">\n      <md-card routerLink=\"/listening/{{test.id}}\">\n        <div class=\"card-des\">\n          <p class=\"test-title red\">{{test.title}}</p>\n          <p class=\"test-des\">{{test.description}}</p>\n        </div>\n      </md-card>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -3135,7 +3157,7 @@ module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [inn
 /***/ 887:
 /***/ (function(module, exports) {
 
-module.exports = "<md-slide-toggle [(ngModel)]=\"data.duplicatable\">Duplicatable</md-slide-toggle>\n\n<p><i>Complete the summary using the list of words, \n  <b>A-{{data.words.length | letter | uppercase}}</b>, below.</i></p>\n<p><i>\n  Write your letter, <b>A-{{data.words.length | letter | uppercase}}</b>, in boxes {{data.first}}\n  <span *ngIf=\"data.last - data.first == 1\"> and </span>\n  <span *ngIf=\"data.last - data.first > 1\">-</span>\n  {{data.last}} on your answer sheet.\n</i></p>\n\n<md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <div *ngIf=\"span.isInput\" class=\"inline-flex\">\n          <b>{{span.data}}</b>\n          <md-select [(ngModel)]=\"answers[i][j]\">\n            <md-option *ngFor=\"let word of data.words; let i = 'index'\"\n                       [value]=\"i + 1\">{{i + 1 | letter | uppercase}}. {{word}}</md-option>\n          </md-select>\n        </div>\n        <span *ngIf=\"!span.isInput\">{{span.data}}</span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card>\n\n<app-option-list \n                 [list]=\"data.words\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n"
+module.exports = "<p class=\"italic\" *ngFor=\"let dir of data.directions\" [innerHTML]=\"dir\"></p>\n\n<md-card class=\"half-card\">\n  <md-card-title>{{data.heading}}</md-card-title>\n  <md-card-content>\n    <p *ngFor=\"let para of displayParas; let i = 'index'\">\n      <span *ngFor=\"let span of para; let j = 'index'\">\n        <div *ngIf=\"span.isInput\" class=\"inline-flex\">\n          <b>{{span.data}}</b>\n          <md-select [(ngModel)]=\"answers[i][j]\">\n            <md-option *ngFor=\"let word of data.words; let i = 'index'\"\n                       [value]=\"i + 1\">{{i + 1 | letter | uppercase}}. {{word}}</md-option>\n          </md-select>\n        </div>\n        <span *ngIf=\"!span.isInput\">{{span.data}}</span>\n      </span>\n    </p>\n  </md-card-content>\n</md-card>\n\n<app-option-list [list]=\"data.words\"\n                 [answers]=\"getAnswerArray()\"\n                 [mark]=\"mark\"></app-option-list>\n"
 
 /***/ }),
 
