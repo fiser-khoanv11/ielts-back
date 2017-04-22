@@ -42,8 +42,7 @@ var upload = multer({
 })
 
 router.post('/audio', upload.any(), function (req, res, next) {
-  // console.log(req.body);
-  // res.send('saved');
+  console.log(req.body);
   let body = req.body;
   let h = false;
 
@@ -76,7 +75,6 @@ router.post('/audio', upload.any(), function (req, res, next) {
       }
     }
   });
-
 });
 
 /* GET users listing. */
