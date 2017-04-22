@@ -1044,7 +1044,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var URL = 'http://localhost:3000/api/user/audio';
+var URL = '/api/user/audio';
 // const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 var AudioComponent = (function () {
     function AudioComponent(http) {
