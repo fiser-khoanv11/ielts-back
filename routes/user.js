@@ -43,39 +43,43 @@ var upload = multer({
 })
 
 router.post('/audio', upload.any(), function (req, res, next) {
-  console.log(req.body);
-  let body = req.body;
-  let h = false;
+  if (req.files[0] == undefined) {
+    console.log('uploaded nothing!');
+    res.send('uploaded nothing!');
+  } else {
+    console.log(req.body);
+    let h = false;
 
-  user = User.findOne({
-    id: body.userId
-  }, function(err, user) {
-    if (err) res.send(err);
-    if (user) {
-      for (let i = 0; i < user.attempts.length; i++) {
-        let attempt = user.attempts[i]
+    user = User.findOne({
+      id: req.body.userId
+    }, function(err, user) {
+      if (err) res.send(err);
+      if (user) {
+        for (let i = 0; i < user.attempts.length; i++) {
+          let attempt = user.attempts[i]
 
-        if (attempt.skill === 'speaking' && attempt.test_id == body.testId) {
-          attempt.audioUrl = req.files[0].filename;
+          if (attempt.skill === 'speaking' && attempt.test_id == req.body.testId) {
+            attempt.audioUrl = req.files[0].filename;
+            findOneAndUpdate(user);
+            res.send('POST user/save-attempt-s');
+            h = true;
+            break;
+          }
+        }
+
+        if (!h) {
+          let data = {
+            test_id: req.body.testId,
+            skill: 'speaking',
+            audioUrl: req.files[0].filename,
+          }
+          user.attempts.push(data);
           findOneAndUpdate(user);
           res.send('POST user/save-attempt-s');
-          h = true;
-          break;
         }
       }
-
-      if (!h) {
-        let data = {
-          test_id: body.testId,
-          skill: 'speaking',
-          audioUrl: req.files[0].filename,
-        }
-        user.attempts.push(data);
-        findOneAndUpdate(user);
-        res.send('POST user/save-attempt-s');
-      }
-    }
-  });
+    });
+  }
 });
 
 /* GET users listing. */
